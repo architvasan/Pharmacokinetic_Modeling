@@ -1,0 +1,124 @@
+embeddings MolformerEmbeddings(
+  (word_embeddings): Embedding(2362, 768, padding_idx=2)
+  (dropout): Dropout(p=0.2, inplace=False)
+)
+encoder MolformerEncoder(
+  (layer): ModuleList(
+    (0-11): 12 x MolformerLayer(
+      (attention): MolformerAttention(
+        (self): MolformerSelfAttention(
+          (query): Linear(in_features=768, out_features=768, bias=True)
+          (key): Linear(in_features=768, out_features=768, bias=True)
+          (value): Linear(in_features=768, out_features=768, bias=True)
+          (rotary_embeddings): MolformerRotaryEmbedding()
+          (feature_map): MolformerFeatureMap(
+            (kernel): ReLU()
+          )
+        )
+        (output): MolformerSelfOutput(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (intermediate): MolformerIntermediate(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (intermediate_act_fn): GELUActivation()
+      )
+      (output): MolformerOutput(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+)
+LayerNorm LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                              SMILES   label
+0                                   Brc1cccc2ccccc12 -4.3500
+1                             N#Cc1cc(Br)c(O)c(Br)c1 -3.3300
+2                               Brc1cc(Br)c(Br)cc1Br -6.9800
+3                     COP(=S)(OC)Oc1cc(Cl)c(Br)cc1Cl -6.0900
+4                       CON(C)C(=O)Nc1ccc(Br)c(Cl)c1 -3.9200
+...                                              ...     ...
+2955   NS(=O)(=O)c1ccc(C(=O)c2ccc(CNCc3ccccc3)cc2)s1 -3.3319
+2956        CCCCNCc1ccc(C(=O)c2ccc(S(N)(=O)=O)s2)cc1 -2.1669
+2957     NS(=O)(=O)c1ccc(C(=O)c2ccc(CN3CCOCC3)cc2)s1 -1.4812
+2958  CN1CCN(Cc2ccc(C(=O)c3ccc(S(N)(=O)=O)s3)cc2)CC1 -1.8802
+2959     CCN(CC)Cc1cc(C(=O)c2ccc(S(N)(=O)=O)s2)ccc1O -1.0324
+[2960 rows x 2 columns]
+Epoch 0
+num_of_examples 1 loss: 0.03941483795642853 %_data_trained : 0.0
+num_of_examples 81 loss: 0.19267072081565856 %_data_trained : 0.3382663847780127
+num_of_examples 161 loss: 0.18312762379646302 %_data_trained : 0.6765327695560254
+/lus/eagle/projects/datascience/avasan/PharmacoKinetics/ModelTraining/MolFormer/Solubility/data_utils.py:28: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  "y_regression_values": torch.tensor(self.y_regression_values[idx]).to(self.device),
+num_of_examples 241 loss: 0.17114262282848358 %_data_trained : 1.014799154334038
+num_of_examples 321 loss: 0.18234361708164215 %_data_trained : 1.3530655391120507
+num_of_examples 401 loss: 0.1584746718406677 %_data_trained : 1.6913319238900635
+num_of_examples 481 loss: 0.14436015784740447 %_data_trained : 2.029598308668076
+num_of_examples 561 loss: 0.15140171051025392 %_data_trained : 2.3678646934460885
+num_of_examples 641 loss: 0.12234188914299012 %_data_trained : 2.7061310782241015
+num_of_examples 721 loss: 0.10915145426988601 %_data_trained : 3.044397463002114
+num_of_examples 801 loss: 0.11759328544139862 %_data_trained : 3.382663847780127
+num_of_examples 881 loss: 0.1036228895187378 %_data_trained : 3.7209302325581395
+num_of_examples 961 loss: 0.08113861232995986 %_data_trained : 4.059196617336152
+num_of_examples 1041 loss: 0.0826450154185295 %_data_trained : 4.397463002114165
+num_of_examples 1121 loss: 0.06217982172966004 %_data_trained : 4.735729386892177
+num_of_examples 1201 loss: 0.06317892968654633 %_data_trained : 5.07399577167019
+num_of_examples 1281 loss: 0.04849196672439575 %_data_trained : 5.412262156448203
+num_of_examples 1361 loss: 0.044090209901332854 %_data_trained : 5.750528541226215
+num_of_examples 1441 loss: 0.026676296070218087 %_data_trained : 6.088794926004228
+num_of_examples 1521 loss: 0.026254837214946748 %_data_trained : 6.427061310782241
+num_of_examples 1601 loss: 0.019328924454748632 %_data_trained : 6.765327695560254
+num_of_examples 1681 loss: 0.021634551323950292 %_data_trained : 7.103594080338267
+num_of_examples 1761 loss: 0.013875008001923561 %_data_trained : 7.441860465116279
+num_of_examples 1841 loss: 0.012969633657485246 %_data_trained : 7.780126849894292
+num_of_examples 1921 loss: 0.008895739726722241 %_data_trained : 8.118393234672304
+num_of_examples 2001 loss: 0.011173683032393456 %_data_trained : 8.456659619450317
+num_of_examples 2081 loss: 0.013068055547773839 %_data_trained : 8.79492600422833
+num_of_examples 2161 loss: 0.01555801760405302 %_data_trained : 9.133192389006343
+num_of_examples 2241 loss: 0.011291403137147427 %_data_trained : 9.471458773784354
+num_of_examples 2321 loss: 0.008278683759272099 %_data_trained : 9.809725158562369
+  num_of_examples 1 test_loss: 6.747453007847071e-05
+Test r2: -0.05269679269860905
+Epoch 1
+num_of_examples 1 loss: 0.0020539727061986922 %_data_trained : 0.0
+num_of_examples 81 loss: 0.00990942120552063 %_data_trained : 0.3382663847780127
+num_of_examples 161 loss: 0.011546165682375431 %_data_trained : 0.6765327695560254
+num_of_examples 241 loss: 0.012084202840924263 %_data_trained : 1.014799154334038
+num_of_examples 321 loss: 0.008230051957070827 %_data_trained : 1.3530655391120507
+num_of_examples 401 loss: 0.009555048495531081 %_data_trained : 1.6913319238900635
+/lus/eagle/projects/datascience/avasan/PharmacoKinetics/ModelTraining/MolFormer/Solubility/data_utils.py:28: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  "y_regression_values": torch.tensor(self.y_regression_values[idx]).to(self.device),
+num_of_examples 481 loss: 0.00787141928449273 %_data_trained : 2.029598308668076
+num_of_examples 561 loss: 0.004839604254812002 %_data_trained : 2.3678646934460885
+num_of_examples 641 loss: 0.010677288472652435 %_data_trained : 2.7061310782241015
+num_of_examples 721 loss: 0.007215952221304178 %_data_trained : 3.044397463002114
+num_of_examples 801 loss: 0.009043760923668742 %_data_trained : 3.382663847780127
+num_of_examples 881 loss: 0.007400851137936116 %_data_trained : 3.7209302325581395
+num_of_examples 961 loss: 0.00759592775721103 %_data_trained : 4.059196617336152
+num_of_examples 1041 loss: 0.005419989209622144 %_data_trained : 4.397463002114165
+num_of_examples 1121 loss: 0.007992876134812832 %_data_trained : 4.735729386892177
+num_of_examples 1201 loss: 0.008138263411819936 %_data_trained : 5.07399577167019
+num_of_examples 1281 loss: 0.008420966006815434 %_data_trained : 5.412262156448203
+num_of_examples 1361 loss: 0.005413461336866021 %_data_trained : 5.750528541226215
+num_of_examples 1441 loss: 0.008119251392781735 %_data_trained : 6.088794926004228
+num_of_examples 1521 loss: 0.005879759043455124 %_data_trained : 6.427061310782241
+num_of_examples 1601 loss: 0.007463959883898497 %_data_trained : 6.765327695560254
+num_of_examples 1681 loss: 0.007179888803511858 %_data_trained : 7.103594080338267
+num_of_examples 1761 loss: 0.006025190465152264 %_data_trained : 7.441860465116279
+num_of_examples 1841 loss: 0.006510604172945023 %_data_trained : 7.780126849894292
+num_of_examples 1921 loss: 0.008660068223252892 %_data_trained : 8.118393234672304
+num_of_examples 2001 loss: 0.004633720312267542 %_data_trained : 8.456659619450317
+num_of_examples 2081 loss: 0.0067640507593750955 %_data_trained : 8.79492600422833
+num_of_examples 2161 loss: 0.007289606425911188 %_data_trained : 9.133192389006343
+num_of_examples 2241 loss: 0.006195875070989132 %_data_trained : 9.471458773784354
+num_of_examples 2321 loss: 0.007594460621476173 %_data_trained : 9.809725158562369
+  num_of_examples 1 test_loss: 3.077599219977856e-05
+Test r2: 0.449789619784866
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/avasan/PharmacoKinetics/ModelTraining/MolFormer/Solubility/run_script.py", line 216, in <module>
+    model_path = 'model_{}_{}'.format(timestamp)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: Replacement index 1 out of range for positional args tuple
