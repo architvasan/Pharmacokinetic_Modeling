@@ -1,0 +1,69 @@
+embeddings MolformerEmbeddings(
+  (word_embeddings): Embedding(2362, 768, padding_idx=2)
+  (dropout): Dropout(p=0.2, inplace=False)
+)
+encoder MolformerEncoder(
+  (layer): ModuleList(
+    (0-11): 12 x MolformerLayer(
+      (attention): MolformerAttention(
+        (self): MolformerSelfAttention(
+          (query): Linear(in_features=768, out_features=768, bias=True)
+          (key): Linear(in_features=768, out_features=768, bias=True)
+          (value): Linear(in_features=768, out_features=768, bias=True)
+          (rotary_embeddings): MolformerRotaryEmbedding()
+          (feature_map): MolformerFeatureMap(
+            (kernel): ReLU()
+          )
+        )
+        (output): MolformerSelfOutput(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (intermediate): MolformerIntermediate(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (intermediate_act_fn): GELUActivation()
+      )
+      (output): MolformerOutput(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+)
+LayerNorm LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                              SMILES   label
+0                                   Brc1cccc2ccccc12 -4.3500
+1                             N#Cc1cc(Br)c(O)c(Br)c1 -3.3300
+2                               Brc1cc(Br)c(Br)cc1Br -6.9800
+3                     COP(=S)(OC)Oc1cc(Cl)c(Br)cc1Cl -6.0900
+4                       CON(C)C(=O)Nc1ccc(Br)c(Cl)c1 -3.9200
+...                                              ...     ...
+2955   NS(=O)(=O)c1ccc(C(=O)c2ccc(CNCc3ccccc3)cc2)s1 -3.3319
+2956        CCCCNCc1ccc(C(=O)c2ccc(S(N)(=O)=O)s2)cc1 -2.1669
+2957     NS(=O)(=O)c1ccc(C(=O)c2ccc(CN3CCOCC3)cc2)s1 -1.4812
+2958  CN1CCN(Cc2ccc(C(=O)c3ccc(S(N)(=O)=O)s3)cc2)CC1 -1.8802
+2959     CCN(CC)Cc1cc(C(=O)c2ccc(S(N)(=O)=O)s2)ccc1O -1.0324
+[2960 rows x 2 columns]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/avasan/envs/chem_llm_finetune/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: PosixPath('SMILES')
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/avasan/PharmacoKinetics/ModelTraining/MolFormer/Solubility/run_script.py", line 72, in <module>
+    X_train, X_test = sklearn.model_selection.train_test_split(data[args.smilescol], test_size=args.testprop, random_state=42)
+                                                               ~~~~^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/chem_llm_finetune/lib/python3.11/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/chem_llm_finetune/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: PosixPath('SMILES')
