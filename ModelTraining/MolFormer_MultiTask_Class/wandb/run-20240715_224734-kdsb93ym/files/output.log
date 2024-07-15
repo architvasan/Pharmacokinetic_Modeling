@@ -1,0 +1,63 @@
+
+  0%|                                                                                                                                                                               | 0/50 [00:00<?, ?it/s]
+0
+<generator object <genexpr> at 0x14fd88124ba0>
+AUC: 0.511823384948385
+1
+<generator object <genexpr> at 0x14fd88124e10>
+AUC: 0.5022078409858699
+2
+<generator object <genexpr> at 0x14fd88125490>
+AUC: 0.5280359749435004
+3
+<generator object <genexpr> at 0x14fd881253c0>
+AUC: 0.5347397443371514
+4
+<generator object <genexpr> at 0x14fd88124e10>
+AUC: 0.5989628232435426
+5
+<generator object <genexpr> at 0x14fd88125490>
+AUC: 0.5939880470406786
+6
+<generator object <genexpr> at 0x14fd881253c0>
+AUC: 0.5172750573824316
+7
+<generator object <genexpr> at 0x14fd88124e10>
+AUC: 0.5331808035491656
+8
+<generator object <genexpr> at 0x14fd88124e10>
+AUC: 0.40498895790200146
+9
+<generator object <genexpr> at 0x14fd88125630>
+AUC: 0.5464765516211274
+10
+<generator object <genexpr> at 0x14fd881253c0>
+AUC: 0.527949494949495
+11
+  0%|                                                                                                                                                                               | 0/50 [00:28<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 238, in <module>
+    auc = calc_auc(val_labels[task_id], val_preds[task_id])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 30, in calc_auc
+    auc_score = roc_auc_score(grnd_truth[:, i], predictions[:, i])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/sklearn/metrics/_ranking.py", line 640, in roc_auc_score
+    return _average_binary_score(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/sklearn/metrics/_base.py", line 75, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/sklearn/metrics/_ranking.py", line 382, in _binary_roc_auc_score
+    raise ValueError(
+ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.
+AUC: 0.49842247606143913
+12
+<generator object <genexpr> at 0x14fd88125630>
+AUC: 0.41852191940396893
+13
+<generator object <genexpr> at 0x14fd881253c0>
+[array([0., 1., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([0., 1., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([0., 0., 1., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([0., 1., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([0., 0., 1., 0., 0.], dtype=float32), array([0., 0., 1., 0., 0.], dtype=float32), array([0., 1., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([0., 0., 0., 0., 1.], dtype=float32), array([0., 1., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32), array([0., 0., 1., 0., 0.], dtype=float32), array([1., 0., 0., 0., 0.], dtype=float32)]

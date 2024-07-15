@@ -74,6 +74,7 @@ wandb.watch(nnmodel, log_freq=100)
 # ========================================================================================================================
 
 # Data Preprocessing
+# took out human data bc it gives errors
 
 len_smallest_dataset = 121
 len_smallest_testset = round(len_smallest_dataset*args.testprop)
@@ -82,6 +83,10 @@ len_smallest_trainset = len_smallest_dataset - len_smallest_testset
 directory = Path('oral_data') #args.dataset
 num_tasks = len(list(directory.iterdir()))
 tasks = [None] * num_tasks
+
+# print("filenames: ")
+# for filepath in directory.iterdir():
+#     print(filepath.stem)
 
 for task_id, filepath in enumerate(directory.iterdir()):
     # import data
@@ -118,13 +123,13 @@ for task_id, filepath in enumerate(directory.iterdir()):
 
     # create Dataloader
     train_sampler = RoundRobinBatchSampler(training_dataset, 96)
-    test_sampler = RoundRobinBatchSampler(training_dataset, 25)
+    # test_sampler = RoundRobinBatchSampler(training_dataset, 25)
     train_dataloader = torch.utils.data.DataLoader(training_dataset, batch_sampler=train_sampler, shuffle=False)
-    test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_sampler=test_sampler, shuffle=False)
+    test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size = 128, shuffle=False)
 
     # save DataLoader
-    filename = filepath.stem
-    tasks[task_id] = (filename, train_dataloader, test_dataloader)
+    # filename = filepath.stem
+    tasks[task_id] = (filepath, train_dataloader, test_dataloader)
 
 
 # ========================================================================================================================
@@ -158,110 +163,123 @@ loss_fn = nn.CrossEntropyLoss()
 for epoch in tqdm(range(args.epochs)):
     # training
     # loop through batches (ith minibatch of every task)
-    zipped_train_dataloaders = zip(*(task[1] for task in tasks))
-    for i, batch in enumerate(zipped_train_dataloaders):
-        print(f"batch: {i}")
-        print(f"length: {len(batch)}")
-        train_losses = [None] * num_tasks
-        # loop through the tasks
-        for task_id, minibatch in enumerate(batch):
-            try:
-                # pass through Molformer
+    if True:
+        zipped_train_dataloaders = zip(*(task[1] for task in tasks))
+        for i, batch in enumerate(zipped_train_dataloaders):
+            # print(f"batch: {i}")
+            # print(f"length: {len(batch)}")
+            train_losses = [0] * num_tasks
+            # loop through the tasks
+            for task_id, minibatch in enumerate(batch):
+                try:
+                    # pass through Molformer
+                    input_ids = minibatch["input_ids"]
+                    attention_mask = minibatch["attention_mask"]
+                    y_regression_values = minibatch["y_regression_values"]
+                    with torch.no_grad():
+                        outputs = LLModel(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
+                        encoder = outputs["hidden_states"][-1]
+                    # average over second dimension of encoder output to get a single vector for each example
+                    encoder = encoder.mean(dim=1)
+                    # pass through our model
+                    preds = nnmodel(encoder, task_id) 
+                    loss = loss_fn(preds, y_regression_values)
+
+                    train_losses[task_id] = loss
+                except:
+                    print(f"task_id: {task_id}, batch num: {i}")
+                
+                if task_id < len(batch)-1:
+                    next_minibatch_size = len(batch[task_id+1]) 
+                    if next_minibatch_size == 0:
+                        break
+                    
+
+            # unweighted
+            total_loss = sum(train_losses)
+
+            optimizer.zero_grad()
+            total_loss.backward()
+            optimizer.step()
+
+            # log loss of each 14 tasks?
+            wandb.log({'train total loss': total_loss})
+
+    if True:
+        # validation
+        val_dataloaders = [task[2] for task in tasks]
+        val_preds = [[] for _ in range(num_tasks)]
+        val_labels = [[] for _ in range(num_tasks)]
+        val_running_losses = [0] * num_tasks
+        for task_id, dataloader in enumerate(val_dataloaders):
+            # print(task_id)
+            # print(task[0] for task in tasks)
+            for minibatch in dataloader:
                 input_ids = minibatch["input_ids"]
                 attention_mask = minibatch["attention_mask"]
                 y_regression_values = minibatch["y_regression_values"]
                 with torch.no_grad():
                     outputs = LLModel(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
                     encoder = outputs["hidden_states"][-1]
-                # average over second dimension of encoder output to get a single vector for each example
-                encoder = encoder.mean(dim=1)
-                # pass through our model
-                preds = nnmodel(encoder, task_id) 
-                loss = loss_fn(preds, y_regression_values)
+                    encoder = encoder.mean(dim=1)
 
-                train_losses[task_id] = loss
-            except:
-                print(f"task_id: {task_id}, batch num: {i}")
-            
-            if task_id < len(batch)-1:
-                next_minibatch_size = len(batch[task_id+1]) 
-                if next_minibatch_size == 0:
-                    break
-                
+                    preds  = nnmodel(encoder, task_id)
+                    loss = loss_fn(preds, y_regression_values)
+
+                    val_preds[task_id].extend(preds.cpu().numpy())
+                    val_labels[task_id].extend(y_regression_values.cpu().numpy())
+                    
+                    # print((val_preds[task_id]))
+                    # print((val_labels[task_id]))
+                    if task_id == 13:
+                        print(val_labels[task_id])
+
+                    val_running_losses[task_id] += loss
+
+            auc = calc_auc(val_labels[task_id], val_preds[task_id])
+            print(f"AUC: {auc}")
+
+        num_val_minibatches = len(tasks[0][2])
+        val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
+        total_loss = sum(val_avg_losses)
+        # log val loss of all 14 tasks?
+        wandb.log({'val total loss': total_loss})
+
+        aucs = [0] * num_tasks
+        for task_id in range(num_tasks):
+            auc = calc_auc(val_labels[task_id], val_preds[task_id])
+            aucs[task_id] = auc
 
         # unweighted
-        total_loss = sum(train_losses)
+        auc_avg = sum(aucs) / num_tasks
 
-        optimizer.zero_grad()
-        total_loss.backward()
-        optimizer.step()
+        # log auc of all 14 tasks?
+        wandb.log({'val avg auc': auc_avg})
 
-        # log loss of each 14 tasks?
-        wandb.log({'train total loss': total_loss})
+        # early stopping and saving best results
+        if auc_avg>best_auc:
+            # stop_crit = 0 ?
+            best_auc = auc_avg
+            #best_vloss = last_tloss
+            #model_path = 'model_{}'.format(timestamp)
+            #model_scripted = torch.jit.script(nnmodel)
+            #model_scripted.save(f'model_{timestamp}.pt')
+            torch.save(nnmodel.state_dict(), f'model_weights.pt')
+            #del(model_scripted)
+            #if epoch>0.75*args.epochs:
+            #    # Generate Parity Plot
+            #    generate_parity_plot(outputs_dict["ground_truth"], outputs_dict["predictions"])
 
-    # validation
-    val_dataloaders = [task[2] for task in tasks]
-    val_preds = [None] * num_tasks
-    val_labels = [None] * num_tasks
-    val_losses = [None] * num_tasks
-    for task_id, dataloader in enumerate(val_dataloaders):
-        for minibatch in dataloader:
-            input_ids = minibatch["input_ids"]
-            attention_mask = minibatch["attention_mask"]
-            y_regression_values = minibatch["y_regression_values"]
-            with torch.no_grad():
-                outputs = LLModel(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
-                encoder = outputs["hidden_states"][-1]
-                encoder = encoder.mean(dim=1)
+            # confusion matrix? average...? aggregate?
+            # y_true_test_rat = np.argmax(val_labels_rat, axis=1)
+            # y_pred_test_rat = np.argmax(val_preds_rat, axis=1)
+            # cm_rat = confusion_matrix(y_true_test, y_pred_test)
+            # plt.figure(figsize=(10, 7))
+            # sns.heatmap(cm_rat, annot=True, fmt='d', cmap='Blues')
+            # wandb.log({"RAT Confusion Matrix": wandb.Image(plt)})
 
-                preds  = nnmodel(encoder, task_id)
-                loss = loss_fn(preds, y_regression_values)
-
-                val_preds[task_id].extend(preds.cpu().numpy())
-                val_labels[task_id].extend(y_regression_values.cpu().numpy())
-                val_running_losses[task_id] += loss
-
-    num_val_minibatches = len(task[0][2])
-    val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
-    total_loss = sum(val_avg_losses)
-    # log val loss of all 14 tasks?
-    wandb.log({'val total loss': total_loss})
-
-    aucs = [None] * num_tasks
-    for task_id in range(num_tasks):
-        auc = calc_auc(val_labels[task_id], val_preds[task_id])
-        aucs[task_id] = auc
-
-    # unweighted
-    auc_avg = sum(aucs) / num_tasks
-
-    # log auc of all 14 tasks?
-    wandb.log({'val avg auc': auc_avg})
-
-    # early stopping and saving best results
-    if auc_avg>best_auc:
-        # stop_crit = 0 ?
-        best_auc = auc_avg
-        #best_vloss = last_tloss
-        #model_path = 'model_{}'.format(timestamp)
-        #model_scripted = torch.jit.script(nnmodel)
-        #model_scripted.save(f'model_{timestamp}.pt')
-        torch.save(nnmodel.state_dict(), f'model_weights.pt')
-        #del(model_scripted)
-        #if epoch>0.75*args.epochs:
-        #    # Generate Parity Plot
-        #    generate_parity_plot(outputs_dict["ground_truth"], outputs_dict["predictions"])
-
-        # confusion matrix? average...?
-        # y_true_test_rat = np.argmax(val_labels_rat, axis=1)
-        # y_pred_test_rat = np.argmax(val_preds_rat, axis=1)
-        # cm_rat = confusion_matrix(y_true_test, y_pred_test)
-        # plt.figure(figsize=(10, 7))
-        # sns.heatmap(cm_rat, annot=True, fmt='d', cmap='Blues')
-        # wandb.log({"Rat Confusion Matrix": wandb.Image(plt)})
-
-    else:
-       stop_crit+=1
-    if stop_crit>early_stop:
-        break
+        else:
+            stop_crit+=1
+        if stop_crit>early_stop:
+            break
 
