@@ -1,0 +1,213 @@
+zip obj
+<zip object at 0x1486de9be900>
+0
+14
+1
+14
+2
+14
+3
+14
+4
+14
+5
+14
+6
+14
+7
+14
+8
+14
+9
+14
+10
+14
+11
+14
+12
+14
+13
+14
+14
+14
+15
+14
+16
+14
+17
+14
+18
+14
+19
+14
+20
+14
+21
+14
+22
+14
+23
+14
+24
+14
+25
+14
+26
+14
+27
+14
+28
+14
+29
+14
+30
+14
+31
+14
+32
+14
+33
+14
+34
+14
+35
+14
+36
+14
+37
+14
+38
+14
+39
+14
+40
+14
+41
+14
+42
+14
+43
+14
+44
+14
+45
+14
+46
+14
+47
+14
+48
+14
+49
+14
+50
+14
+51
+14
+52
+14
+53
+14
+54
+14
+55
+14
+56
+14
+57
+14
+58
+14
+59
+14
+60
+14
+61
+14
+62
+14
+63
+14
+64
+14
+65
+14
+66
+14
+67
+14
+68
+14
+69
+14
+70
+14
+71
+14
+72
+14
+73
+14
+74
+14
+75
+14
+76
+14
+77
+14
+78
+14
+79
+14
+80
+14
+81
+14
+82
+14
+83
+14
+84
+14
+85
+14
+86
+14
+87
+14
+88
+14
+89
+14
+90
+14
+91
+14
+92
+14
+93
+14
+94
+14
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 150, in <module>
+    for i, batch in enumerate(zip(*(task[1] for task in tasks))):
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 316, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 136, in collate
+    elem = batch[0]
+           ~~~~~^^^
+IndexError: list index out of range
+95
+14

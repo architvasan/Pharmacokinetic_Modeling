@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 34%|█████████████████████████████████████████████▌                                                                                        | 17/50 [10:48<20:58, 38.15s/it]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_single.py", line 127, in <module>
+    for batch in train_dataloader:
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/data_utils.py", line 25, in __getitem__
+    "input_ids": inputs["input_ids"].flatten().to(self.device),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

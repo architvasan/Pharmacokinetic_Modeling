@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/run_script.py", line 272, in <module>
+    sys.stdout = log_file
+                ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/run_script.py", line 145, in train_one_epoch
+    with torch.no_grad():
+                  ^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 671, in forward
+    extended_attention_mask: torch.Tensor = self.get_extended_attention_mask(attention_mask, input_shape)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/transformers/modeling_utils.py", line 1079, in get_extended_attention_mask
+    extended_attention_mask = (1.0 - extended_attention_mask) * torch.finfo(dtype).min
+                               ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/_tensor.py", line 40, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/_tensor.py", line 966, in __rsub__
+    return _C._VariableFunctions.rsub(self, other)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

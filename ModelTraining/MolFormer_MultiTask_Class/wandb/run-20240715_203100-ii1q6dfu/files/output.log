@@ -1,0 +1,17 @@
+  0%|                                                                                                                                                                                    | 0/50 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 153, in <module>
+    for i, batch in enumerate(zipped_train_dataloaders):
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 674, in _next_data
+    index = self._next_index()  # may raise StopIteration
+            ^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 621, in _next_index
+    return next(self._sampler_iter)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/data_utils.py", line 40, in __iter__
+    random.shuffle(indices)  # Shuffle the indices
+    ^^^^^^
+NameError: name 'random' is not defined

@@ -1,0 +1,310 @@
+zip obj
+<zip object at 0x14b012ae2540>
+0
+14
+1
+14
+2
+14
+3
+14
+4
+14
+5
+14
+6
+14
+7
+14
+8
+14
+9
+14
+10
+14
+11
+14
+12
+14
+13
+14
+14
+14
+15
+14
+16
+14
+17
+14
+18
+14
+19
+14
+20
+14
+21
+14
+22
+14
+23
+14
+24
+14
+25
+14
+26
+14
+27
+14
+28
+14
+29
+14
+30
+14
+31
+14
+32
+14
+33
+14
+34
+14
+35
+14
+36
+14
+37
+14
+38
+14
+39
+14
+40
+14
+41
+14
+42
+14
+43
+14
+44
+14
+45
+14
+46
+14
+47
+14
+48
+14
+49
+14
+50
+14
+51
+14
+52
+14
+53
+14
+54
+14
+55
+14
+56
+14
+57
+14
+58
+14
+59
+14
+60
+14
+61
+14
+62
+14
+63
+14
+64
+14
+65
+14
+66
+14
+67
+14
+68
+14
+69
+14
+70
+14
+71
+14
+72
+14
+73
+14
+74
+14
+75
+14
+76
+14
+77
+14
+78
+14
+79
+14
+80
+14
+81
+14
+82
+14
+83
+14
+84
+14
+85
+14
+86
+14
+87
+14
+88
+14
+89
+14
+90
+14
+91
+14
+92
+14
+93
+14
+94
+14
+95
+14
+  0%|                                                                                                                                                                                    | 0/50 [00:00<?, ?it/s]
+batch: 0
+batch: 1
+batch: 2
+batch: 3
+batch: 4
+batch: 5
+batch: 6
+batch: 7
+batch: 8
+batch: 9
+batch: 10
+batch: 11
+batch: 12
+batch: 13
+batch: 14
+batch: 15
+batch: 16
+batch: 17
+batch: 18
+batch: 19
+batch: 20
+batch: 21
+batch: 22
+batch: 23
+batch: 24
+batch: 25
+batch: 26
+batch: 27
+batch: 28
+batch: 29
+batch: 30
+batch: 31
+batch: 32
+batch: 33
+batch: 34
+batch: 35
+batch: 36
+batch: 37
+batch: 38
+batch: 39
+batch: 40
+batch: 41
+batch: 42
+batch: 43
+batch: 44
+batch: 45
+batch: 46
+batch: 47
+batch: 48
+batch: 49
+batch: 50
+batch: 51
+batch: 52
+batch: 53
+batch: 54
+batch: 55
+batch: 56
+batch: 57
+batch: 58
+batch: 59
+batch: 60
+batch: 61
+batch: 62
+batch: 63
+batch: 64
+batch: 65
+batch: 66
+batch: 67
+batch: 68
+batch: 69
+batch: 70
+batch: 71
+batch: 72
+batch: 73
+batch: 74
+batch: 75
+batch: 76
+batch: 77
+batch: 78
+batch: 79
+batch: 80
+batch: 81
+batch: 82
+batch: 83
+batch: 84
+batch: 85
+batch: 86
+batch: 87
+batch: 88
+batch: 89
+batch: 90
+batch: 91
+batch: 92
+batch: 93
+batch: 94
+  0%|                                                                                                                                                                                    | 0/50 [02:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 201, in <module>
+    for minibatch in dataloader:
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/data_utils.py", line 18, in __getitem__
+    data = str(self.data[idx])
+               ~~~~~~~~~^^^^^
+IndexError: list index out of range

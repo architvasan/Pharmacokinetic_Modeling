@@ -1,0 +1,72 @@
+
+
+  2%|███▎                                                                                                                                                                | 1/50 [00:45<36:53, 45.17s/it]
+Confusion Matrix:
+ [[  0   0  35  28  19]
+ [  0   0  38  49  17]
+ [  0   0  97 293 110]
+ [  0   0  57 368 151]
+ [  0   0  41 223 443]]
+Confusion Matrix:
+ [[  0   0  53   8  21]
+ [  0   0  62  22  20]
+ [  0   0 203 173 124]
+ [  0   0 120 254 202]
+
+  4%|██████▌                                                                                                                                                             | 2/50 [01:59<47:48, 59.77s/it]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv.py", line 125, in <module>
+    outputs = LLModel(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)#labels=labels,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 682, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 426, in forward
+    layer_outputs = layer_module(
+                    ^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 361, in forward
+    self_attention_outputs = self.attention(
+                             ^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 301, in forward
+    self_outputs = self.self(
+                   ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 205, in forward
+    query_layer, key_layer = apply_rotary_pos_emb(query_layer, key_layer, cos, sin, position_ids)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 66, in apply_rotary_pos_emb
+    k_embed = (k * cos) + (rotate_half(k) * sin)
+                           ^^^^^^^^^^^^^^
+  File "/home/lvairusanl/.cache/huggingface/modules/transformers_modules/ibm/MoLFormer-XL-both-10pct/7b12d946c181a37f6012b9dc3b002275de070314/modeling_molformer.py", line 58, in rotate_half
+    return torch.cat((-x2, x1), dim=-1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

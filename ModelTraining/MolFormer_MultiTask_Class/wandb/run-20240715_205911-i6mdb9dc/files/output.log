@@ -1,0 +1,117 @@
+
+  0%|                                                                                                                                                                                    | 0/50 [00:00<?, ?it/s]
+batch: 0
+batch: 1
+batch: 2
+batch: 3
+batch: 4
+batch: 5
+batch: 6
+batch: 7
+batch: 8
+batch: 9
+batch: 10
+batch: 11
+batch: 12
+batch: 13
+batch: 14
+batch: 15
+batch: 16
+batch: 17
+batch: 18
+batch: 19
+batch: 20
+batch: 21
+batch: 22
+batch: 23
+batch: 24
+batch: 25
+batch: 26
+batch: 27
+batch: 28
+batch: 29
+batch: 30
+batch: 31
+batch: 32
+batch: 33
+batch: 34
+batch: 35
+batch: 36
+batch: 37
+batch: 38
+batch: 39
+batch: 40
+batch: 41
+batch: 42
+batch: 43
+batch: 44
+batch: 45
+batch: 46
+batch: 47
+batch: 48
+batch: 49
+batch: 50
+batch: 51
+batch: 52
+batch: 53
+batch: 54
+batch: 55
+batch: 56
+batch: 57
+batch: 58
+batch: 59
+batch: 60
+batch: 61
+batch: 62
+batch: 63
+batch: 64
+batch: 65
+batch: 66
+batch: 67
+batch: 68
+batch: 69
+batch: 70
+batch: 71
+batch: 72
+batch: 73
+batch: 74
+batch: 75
+batch: 76
+batch: 77
+batch: 78
+batch: 79
+batch: 80
+batch: 81
+batch: 82
+batch: 83
+batch: 84
+batch: 85
+batch: 86
+batch: 87
+batch: 88
+batch: 89
+batch: 90
+batch: 91
+batch: 92
+batch: 93
+batch: 94
+  0%|                                                                                                                                                                                    | 0/50 [02:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 207, in <module>
+    for minibatch in dataloader:
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/data_utils.py", line 18, in __getitem__
+    data = str(self.data[idx])
+               ~~~~~~~~~^^^^^
+IndexError: list index out of range
