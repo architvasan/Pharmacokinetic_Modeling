@@ -1,7 +1,10 @@
 # imports
 # Load model directly
 import numpy as np
+from numpy.random import MT19937
+from numpy.random import RandomState, SeedSequence
 import pandas as pd
+import random
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -20,6 +23,26 @@ from datetime import datetime
 from argparse import ArgumentParser, SUPPRESS
 from transformers import AutoModel, AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForMaskedLM
 
+SEED = 42
+
+def set_determenistic_mode(SEED):
+  torch.manual_seed(SEED)                       # Seed the RNG for all devices (both CPU and CUDA).
+  random.seed(SEED)                             # Set python seed for custom operators.
+  rs = RandomState(MT19937(SeedSequence(SEED))) # If any of the libraries or code rely on NumPy seed the global NumPy RNG.
+  np.random.seed(SEED)             
+  torch.cuda.manual_seed_all(SEED)              # If you are using multi-GPU. In case of one GPU, you can use # torch.cuda.manual_seed(SEED).
+
+set_determenistic_mode(SEED)
+
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
+
+gen = torch.Generator()
+gen.manual_seed(SEED)
+
+torch.cuda.manual_seed_all(SEED)
 
 # Calculate and avg AUC for each class
 def calc_auc(grnd_truth, predictions):
@@ -80,13 +103,13 @@ len_smallest_dataset = 121
 len_smallest_testset = round(len_smallest_dataset*args.testprop)
 len_smallest_trainset = len_smallest_dataset - len_smallest_testset
 # name_list = ['bird', 'cat', 'chicken', 'dog', 'duck', 'gpig', 'human', 'mammal', 'man', 'mouse', 'quail', 'rabbit', 'rat', 'woman']
-directory = Path('oral_data') #args.dataset
+directory = Path(args.dataset)
 num_tasks = len(list(directory.iterdir()))
 tasks = [None] * num_tasks
 
-# print("filenames: ")
-# for filepath in directory.iterdir():
-#     print(filepath.stem)
+print("filenames: ")
+for filepath in directory.iterdir():
+    print(filepath.stem)
 
 for task_id, filepath in enumerate(directory.iterdir()):
     # import data
@@ -101,7 +124,7 @@ for task_id, filepath in enumerate(directory.iterdir()):
         test_size=args.testprop,
         shuffle=True,
         stratify=data[args.labelcol],
-        random_state=42
+        random_state=SEED
     )
 
     # convert feature pandas dataframe to list for tokenization
@@ -124,12 +147,12 @@ for task_id, filepath in enumerate(directory.iterdir()):
     # create Dataloader
     train_sampler = RoundRobinBatchSampler(training_dataset, 96)
     # test_sampler = RoundRobinBatchSampler(training_dataset, 25)
-    train_dataloader = torch.utils.data.DataLoader(training_dataset, batch_sampler=train_sampler, shuffle=False)
-    test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size = 128, shuffle=False)
+    train_dataloader = torch.utils.data.DataLoader(training_dataset, batch_sampler=train_sampler, worker_init_fn=seed_worker, generator=gen, shuffle=False)
+    test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size = 128, worker_init_fn=seed_worker, generator=gen, shuffle=False)
 
     # save DataLoader
-    # filename = filepath.stem
-    tasks[task_id] = (filepath, train_dataloader, test_dataloader)
+    filename = filepath.stem
+    tasks[task_id] = (filename, train_dataloader, test_dataloader)
 
 
 # ========================================================================================================================
@@ -145,13 +168,6 @@ stop_crit = 0
 best_auc = 0
 loss_fn = nn.CrossEntropyLoss()
 
-# zip train_dataloaders of all tasks to iterate through them in parallel
-# zipped_train_dataloaders = zip(*(task[1] for task in tasks))
-# train_dataloaders_parallel = list(zipped_train_dataloaders)
-
-# print("zip obj")
-# print(zip(*(task[1] for task in tasks)))
-
 # for i, batch in enumerate(zip(*(task[1] for task in tasks))):
 #     try:
 #         print(i)
@@ -163,7 +179,8 @@ loss_fn = nn.CrossEntropyLoss()
 for epoch in tqdm(range(args.epochs)):
     # training
     # loop through batches (ith minibatch of every task)
-    if True:
+    if False:
+        # zip train_dataloaders of all tasks to iterate through them in parallel
         zipped_train_dataloaders = zip(*(task[1] for task in tasks))
         for i, batch in enumerate(zipped_train_dataloaders):
             # print(f"batch: {i}")
@@ -205,7 +222,7 @@ for epoch in tqdm(range(args.epochs)):
             # log loss of each 14 tasks?
             wandb.log({'train total loss': total_loss})
 
-    if True:
+    if False:
         # validation
         val_dataloaders = [task[2] for task in tasks]
         val_preds = [[] for _ in range(num_tasks)]
@@ -256,9 +273,13 @@ for epoch in tqdm(range(args.epochs)):
         # log auc of all 14 tasks?
         wandb.log({'val avg auc': auc_avg})
 
+        # take out specific tasks if their auc decreases early_stop times
+
+        # save weights of specific last layers if their auc increases
+
         # early stopping and saving best results
         if auc_avg>best_auc:
-            # stop_crit = 0 ?
+            stop_crit = 0
             best_auc = auc_avg
             #best_vloss = last_tloss
             #model_path = 'model_{}'.format(timestamp)
