@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 114, in <module>
+    nnmodel = NNModel(config).to("cuda")
+              ^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/classification_layer_multi.py", line 30, in __init__
+    nn.Linear(config["input_size"], config["embedding_size"]),
+                                    ~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'embedding_size'

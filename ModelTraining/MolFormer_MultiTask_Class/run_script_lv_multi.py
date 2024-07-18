@@ -1,10 +1,8 @@
 # imports
 # Load model directly
+import math
 import numpy as np
-from numpy.random import MT19937
-from numpy.random import RandomState, SeedSequence
 import pandas as pd
-import random
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -22,27 +20,12 @@ from pathlib import Path
 from datetime import datetime
 from argparse import ArgumentParser, SUPPRESS
 from transformers import AutoModel, AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForMaskedLM
+import random
+from numpy.random import MT19937
+from numpy.random import RandomState, SeedSequence
+import torch.backends.cudnn 
+import torch.cuda
 
-SEED = 42
-
-def set_determenistic_mode(SEED):
-  torch.manual_seed(SEED)                       # Seed the RNG for all devices (both CPU and CUDA).
-  random.seed(SEED)                             # Set python seed for custom operators.
-  rs = RandomState(MT19937(SeedSequence(SEED))) # If any of the libraries or code rely on NumPy seed the global NumPy RNG.
-  np.random.seed(SEED)             
-  torch.cuda.manual_seed_all(SEED)              # If you are using multi-GPU. In case of one GPU, you can use # torch.cuda.manual_seed(SEED).
-
-set_determenistic_mode(SEED)
-
-def seed_worker(worker_id):
-    worker_seed = torch.initial_seed() % 2**32
-    np.random.seed(worker_seed)
-    random.seed(worker_seed)
-
-gen = torch.Generator()
-gen.manual_seed(SEED)
-
-torch.cuda.manual_seed_all(SEED)
 
 # Calculate and avg AUC for each class
 def calc_auc(grnd_truth, predictions):
@@ -60,6 +43,7 @@ def calc_auc(grnd_truth, predictions):
 
     return auc_macro
     
+
 # parse arguments
 parser = ArgumentParser()#add_help=False)
 parser.add_argument(
@@ -80,18 +64,58 @@ parser.add_argument(
 
 args = parser.parse_args()
 
+# hyperparameters
+config = dict(  input_size = 768,
+                emb_size = 256,
+                hidden_size = 256,
+                output_size = 5,
+                lr = 1e-4,
+                test_size = args.testprop,
+                epochs = args.epochs,
+                layertype = "OrthoLinear",
+                seed_idx = 0,
+                tasks = 'bird'
+)
 
 # init wandb to log results
-wandb.init()
+wandb.init( project = "Multitask Class Oral Test",
+            group = "stask",
+            config = config,
+)
+config = wandb.config
 
+
+# Reproducability
+seeds = [53844, 837465, 800662, 910250, 543584, 179839, 707873, 482701, 278083, 198125]
+SEED = seeds[config.seed_idx]
+
+def set_determenistic_mode(SEED):
+    torch.manual_seed(SEED)                         # Seed the RNG for all devices (both CPU and CUDA).
+    random.seed(SEED)                               # Set python seed for custom operators.
+    rs = RandomState(MT19937(SeedSequence(SEED)))   # If any of the libraries or code rely on NumPy seed the global NumPy RNG.
+    np.random.seed(SEED)             
+    torch.cuda.manual_seed_all(SEED)                # If you are using multi-GPU. In case of one GPU, you can use # torch.cuda.manual_seed(SEED).
+
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
+
+set_determenistic_mode(SEED)
+gen = torch.Generator()
+gen.manual_seed(SEED)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
+
+# initialize models
 tokenizer = AutoTokenizer.from_pretrained("ibm/MoLFormer-XL-both-10pct", trust_remote_code=True)
 LLModel = AutoModel.from_pretrained("ibm/MoLFormer-XL-both-10pct", deterministic_eval=True, trust_remote_code=True)
 LLModel.to("cuda")
 LLModel.eval()
-# for name, layer in LLModel.named_children():
-#     print(name, layer)
 
-nnmodel = NNModel(config={"input_size": 768, "embedding_size": 256, "hidden_size": 256, "output_size": 5, "n_layers": 3}).to("cuda")
+nnmodel = NNModel(config).to("cuda")
+
 wandb.watch(nnmodel, log_freq=100)
 
 # ========================================================================================================================
@@ -100,7 +124,7 @@ wandb.watch(nnmodel, log_freq=100)
 # took out human data bc it gives errors
 
 len_smallest_dataset = 121
-len_smallest_testset = round(len_smallest_dataset*args.testprop)
+len_smallest_testset = math.ceil(len_smallest_dataset*args.testprop)
 len_smallest_trainset = len_smallest_dataset - len_smallest_testset
 # name_list = ['bird', 'cat', 'chicken', 'dog', 'duck', 'gpig', 'human', 'mammal', 'man', 'mouse', 'quail', 'rabbit', 'rat', 'woman']
 directory = Path(args.dataset)
@@ -145,7 +169,7 @@ for task_id, filepath in enumerate(directory.iterdir()):
     test_dataset = CustomDataset(tokenizer, X_test, Y_hot_test, max_input_length=512, max_target_length=512)
 
     # create Dataloader
-    train_sampler = RoundRobinBatchSampler(training_dataset, 96)
+    train_sampler = RoundRobinBatchSampler(training_dataset, len_smallest_trainset)
     # test_sampler = RoundRobinBatchSampler(training_dataset, 25)
     train_dataloader = torch.utils.data.DataLoader(training_dataset, batch_sampler=train_sampler, worker_init_fn=seed_worker, generator=gen, shuffle=False)
     test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size = 128, worker_init_fn=seed_worker, generator=gen, shuffle=False)
@@ -158,14 +182,14 @@ for task_id, filepath in enumerate(directory.iterdir()):
 # ========================================================================================================================
 
 # Initialize optimizer
-optimizer = torch.optim.Adam(nnmodel.parameters(), lr=1e-4)
+optimizer = torch.optim.Adam(nnmodel.parameters(), lr=config['lr'])
 # Timestamp
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
 # initialize helper variables
 early_stop = 20
 stop_crit = 0
-best_auc = 0
+best_epoch_auc = 0
 loss_fn = nn.CrossEntropyLoss()
 
 # for i, batch in enumerate(zip(*(task[1] for task in tasks))):
@@ -179,13 +203,13 @@ loss_fn = nn.CrossEntropyLoss()
 for epoch in tqdm(range(args.epochs)):
     # training
     # loop through batches (ith minibatch of every task)
-    if False:
+    wandb.log({'epoch': epoch})
+    if True:
+        train_running_losses = [0] * num_tasks
         # zip train_dataloaders of all tasks to iterate through them in parallel
         zipped_train_dataloaders = zip(*(task[1] for task in tasks))
         for i, batch in enumerate(zipped_train_dataloaders):
-            # print(f"batch: {i}")
-            # print(f"length: {len(batch)}")
-            train_losses = [0] * num_tasks
+            train_batch_losses = [0] * num_tasks
             # loop through the tasks
             for task_id, minibatch in enumerate(batch):
                 try:
@@ -202,35 +226,42 @@ for epoch in tqdm(range(args.epochs)):
                     preds = nnmodel(encoder, task_id) 
                     loss = loss_fn(preds, y_regression_values)
 
-                    train_losses[task_id] = loss
+                    train_batch_losses[task_id] = loss
+                    train_running_losses[task_id] += loss
                 except:
                     print(f"task_id: {task_id}, batch num: {i}")
                 
-                if task_id < len(batch)-1:
-                    next_minibatch_size = len(batch[task_id+1]) 
-                    if next_minibatch_size == 0:
-                        break
+                # if task_id < len(batch)-1:
+                #     next_minibatch_size = len(batch[task_id+1]) 
+                #     if next_minibatch_size == 0:
+                #         break
                     
 
             # unweighted
-            total_loss = sum(train_losses)
+            train_batch_total_loss = sum(train_batch_losses)
 
             optimizer.zero_grad()
-            total_loss.backward()
+            train_batch_total_loss.backward()
             optimizer.step()
 
             # log loss of each 14 tasks?
-            wandb.log({'train total loss': total_loss})
+            # wandb.log({'train batch total loss': train_batch_total_loss})
+        
+        num_train_batches = len(tasks[0][1])
+        train_avg_losses = [loss / num_train_batches for loss in train_running_losses]
+        train_epoch_total_loss = sum(train_avg_losses)
+        wandb.log({'train epoch total loss': train_epoch_total_loss})
 
-    if False:
-        # validation
+    # validation
+    if True:
         val_dataloaders = [task[2] for task in tasks]
         val_preds = [[] for _ in range(num_tasks)]
         val_labels = [[] for _ in range(num_tasks)]
         val_running_losses = [0] * num_tasks
+        val_avg_losses = [0] * num_tasks
         for task_id, dataloader in enumerate(val_dataloaders):
-            # print(task_id)
-            # print(task[0] for task in tasks)
+            num_val_minibatches = len(dataloader)
+            val_running_loss = 0
             for minibatch in dataloader:
                 input_ids = minibatch["input_ids"]
                 attention_mask = minibatch["attention_mask"]
@@ -245,22 +276,19 @@ for epoch in tqdm(range(args.epochs)):
 
                     val_preds[task_id].extend(preds.cpu().numpy())
                     val_labels[task_id].extend(y_regression_values.cpu().numpy())
-                    
-                    # print((val_preds[task_id]))
-                    # print((val_labels[task_id]))
-                    if task_id == 13:
-                        print(val_labels[task_id])
 
-                    val_running_losses[task_id] += loss
+                    val_running_loss += loss
 
+            val_running_losses[task_id] = val_running_loss
+            val_avg_losses[task_id] = val_running_loss / num_val_minibatches
             auc = calc_auc(val_labels[task_id], val_preds[task_id])
             print(f"AUC: {auc}")
 
-        num_val_minibatches = len(tasks[0][2])
+        
         val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
-        total_loss = sum(val_avg_losses)
+        val_total_loss = sum(val_avg_losses)
         # log val loss of all 14 tasks?
-        wandb.log({'val total loss': total_loss})
+        wandb.log({'val total loss': val_total_loss})
 
         aucs = [0] * num_tasks
         for task_id in range(num_tasks):
@@ -278,14 +306,18 @@ for epoch in tqdm(range(args.epochs)):
         # save weights of specific last layers if their auc increases
 
         # early stopping and saving best results
-        if auc_avg>best_auc:
+        if auc_avg>best_epoch_auc:
             stop_crit = 0
-            best_auc = auc_avg
-            #best_vloss = last_tloss
+            best_epoch_auc = auc_avg
+            best_epoch = epoch
+            best_epoch_tloss = train_epoch_total_loss
+            best_epoch_vloss = val_total_loss
+
+            torch.save(nnmodel.state_dict(), f'model_weights.pt')
+
             #model_path = 'model_{}'.format(timestamp)
             #model_scripted = torch.jit.script(nnmodel)
             #model_scripted.save(f'model_{timestamp}.pt')
-            torch.save(nnmodel.state_dict(), f'model_weights.pt')
             #del(model_scripted)
             #if epoch>0.75*args.epochs:
             #    # Generate Parity Plot
@@ -303,4 +335,10 @@ for epoch in tqdm(range(args.epochs)):
             stop_crit+=1
         if stop_crit>early_stop:
             break
+
+wandb.log({ "best epoch": best_epoch,
+            "best epoch auc": best_epoch_auc,
+            "best epoch tloss": best_epoch_tloss,
+            "best epoch vloss": best_epoch_vloss
+})
 

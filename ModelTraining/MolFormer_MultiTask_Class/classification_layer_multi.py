@@ -27,20 +27,11 @@ class NNModel(nn.Module):
         """
         super(NNModel, self).__init__()
         self.embeds: nn.Sequential = nn.Sequential(
-            nn.Linear(config["input_size"], config["embedding_size"]),
+            nn.Linear(config["input_size"], config["emb_size"]),
             nn.ReLU(),
-            OrthoLinear(config["embedding_size"], config["hidden_size"]),
+            OrthoLinear(config["emb_size"], config["hidden_size"]),
             nn.ReLU(),
         )
-        # self.linearlayers: nn.ModuleList = nn.ModuleList(
-        #     [
-        #         nn.Sequential(
-        #             OrthoLinear(config["hidden_size"], config["hidden_size"]), nn.ReLU()
-        #         )
-        #         for _ in range(config["n_layers"])
-        #     ]
-        # )
-        # self.output: nn.Linear = nn.Linear(config["hidden_size"], config["output_size"])
 
         self.linearlayers: nn.ModuleList = nn.ModuleList([
             nn.Sequential(OrthoLinear(config["hidden_size"], 256), nn.ReLU()),
