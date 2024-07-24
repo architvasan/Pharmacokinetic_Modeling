@@ -1,0 +1,1309 @@
+2024-07-22 17:42:56,355 INFO    StreamThr :2041690 [internal.py:wandb_internal():87] W&B internal server running at pid: 2041690, started at: 2024-07-22 17:42:56.353823
+2024-07-22 17:42:56,356 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status
+2024-07-22 17:42:56,360 INFO    WriterThread:2041690 [datastore.py:open_for_write():85] open: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/run-e3hczpg7.wandb
+2024-07-22 17:42:56,361 DEBUG   SenderThread:2041690 [sender.py:send():336] send: header
+2024-07-22 17:42:56,473 DEBUG   SenderThread:2041690 [sender.py:send():336] send: run
+2024-07-22 17:42:56,628 INFO    SenderThread:2041690 [dir_watcher.py:__init__():219] watching files in: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files
+2024-07-22 17:42:56,628 INFO    SenderThread:2041690 [sender.py:_start_run_threads():1078] run started: e3hczpg7 with start time 1721670176.353906
+2024-07-22 17:42:56,628 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:42:56,630 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: check_version
+2024-07-22 17:42:56,630 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:42:56,630 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: check_version
+2024-07-22 17:42:56,754 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: run_start
+2024-07-22 17:42:56,768 DEBUG   HandlerThread:2041690 [system_info.py:__init__():31] System info init
+2024-07-22 17:42:56,768 DEBUG   HandlerThread:2041690 [system_info.py:__init__():46] System info init done
+2024-07-22 17:42:56,769 INFO    HandlerThread:2041690 [system_monitor.py:start():183] Starting system monitor
+2024-07-22 17:42:56,769 INFO    SystemMonitor:2041690 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2024-07-22 17:42:56,769 INFO    HandlerThread:2041690 [system_monitor.py:probe():204] Collecting system info
+2024-07-22 17:42:56,769 INFO    SystemMonitor:2041690 [interfaces.py:start():187] Started cpu monitoring
+2024-07-22 17:42:56,770 INFO    SystemMonitor:2041690 [interfaces.py:start():187] Started disk monitoring
+2024-07-22 17:42:56,770 INFO    SystemMonitor:2041690 [interfaces.py:start():187] Started gpu monitoring
+2024-07-22 17:42:56,771 INFO    SystemMonitor:2041690 [interfaces.py:start():187] Started memory monitoring
+2024-07-22 17:42:56,771 INFO    SystemMonitor:2041690 [interfaces.py:start():187] Started network monitoring
+2024-07-22 17:42:56,802 DEBUG   HandlerThread:2041690 [system_info.py:probe():195] Probing system
+2024-07-22 17:42:56,805 DEBUG   HandlerThread:2041690 [system_info.py:_probe_git():180] Probing git
+2024-07-22 17:42:56,818 DEBUG   HandlerThread:2041690 [system_info.py:_probe_git():188] Probing git done
+2024-07-22 17:42:56,819 DEBUG   HandlerThread:2041690 [system_info.py:probe():240] Probing system done
+2024-07-22 17:42:56,819 DEBUG   HandlerThread:2041690 [system_monitor.py:probe():213] {'os': 'Linux-5.14.21-150500.55.49-default-x86_64-with-glibc2.31', 'python': '3.11.8', 'heartbeatAt': '2024-07-22T17:42:56.802745', 'startedAt': '2024-07-22T17:42:56.332660', 'docker': None, 'cuda': None, 'args': ('--emb_size=256', '--epochs=32', '--hidden_size=256', '--input_size=768', '--labelcol=EPACategoryIndex', '--layertype=OrthoLinear', '--lr=0.0001', '--output_size=5', '--seed_idx=4', '--smilescol=SMILES', "--task=['gpig']", '--test_size=0.2'), 'state': 'running', 'program': '/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi_sweep2.py', 'codePath': 'ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi_sweep2.py', 'git': {'remote': 'https://github.com/architvasan/Pharmacokinetic_Modeling.git', 'commit': '7613527569e3da7888568aa9c04c79488bd2fdf8'}, 'email': None, 'root': '/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling', 'host': 'x3006c0s1b0n0', 'username': 'lvairusanl', 'executable': '/lus/eagle/projects/datascience/lvairus/envs/sst/bin/python', 'cpu_count': 32, 'cpu_count_logical': 64, 'cpu_freq': {'current': 2847.744953124998, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 3450.014, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 3503.433, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 3504.182, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 3502.962, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}, {'current': 2794.639, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 20.0, 'used': 1.7314987182617188}, 'gpu': 'NVIDIA A100-SXM4-40GB', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-40GB', 'memory_total': 42949672960}, {'name': 'NVIDIA A100-SXM4-40GB', 'memory_total': 42949672960}, {'name': 'NVIDIA A100-SXM4-40GB', 'memory_total': 42949672960}, {'name': 'NVIDIA A100-SXM4-40GB', 'memory_total': 42949672960}], 'memory': {'total': 503.19799423217773}}
+2024-07-22 17:42:56,819 INFO    HandlerThread:2041690 [system_monitor.py:probe():214] Finished collecting system info
+2024-07-22 17:42:56,819 INFO    HandlerThread:2041690 [system_monitor.py:probe():217] Publishing system info
+2024-07-22 17:42:56,819 DEBUG   HandlerThread:2041690 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2024-07-22 17:42:56,821 DEBUG   HandlerThread:2041690 [system_info.py:_save_pip():67] Saving pip packages done
+2024-07-22 17:42:56,821 DEBUG   HandlerThread:2041690 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2024-07-22 17:42:57,630 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_created():278] file/dir created: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:42:57,631 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_created():278] file/dir created: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/conda-environment.yaml
+2024-07-22 17:42:57,631 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_created():278] file/dir created: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/requirements.txt
+2024-07-22 17:43:05,634 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/conda-environment.yaml
+2024-07-22 17:43:05,665 DEBUG   HandlerThread:2041690 [system_info.py:_save_conda():86] Saving conda packages done
+2024-07-22 17:43:05,668 INFO    HandlerThread:2041690 [system_monitor.py:probe():219] Finished publishing system info
+2024-07-22 17:43:05,685 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:05,686 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:05,686 DEBUG   SenderThread:2041690 [sender.py:send():336] send: files
+2024-07-22 17:43:05,686 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2024-07-22 17:43:05,691 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: stop_status
+2024-07-22 17:43:05,691 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: stop_status
+2024-07-22 17:43:05,877 DEBUG   SenderThread:2041690 [sender.py:send():336] send: telemetry
+2024-07-22 17:43:06,052 INFO    wandb-upload_0:2041690 [upload_job.py:push():138] Uploaded file /var/tmp/pbs.2034579.polaris-pbs-01.hsn.cm.polaris.alcf.anl.gov/tmp8tkh681zwandb/qeex189b-wandb-metadata.json
+2024-07-22 17:43:06,635 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_created():278] file/dir created: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-metadata.json
+2024-07-22 17:43:06,877 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:08,018 DEBUG   SenderThread:2041690 [sender.py:send():336] send: telemetry
+2024-07-22 17:43:08,992 DEBUG   SenderThread:2041690 [sender.py:send():336] send: telemetry
+2024-07-22 17:43:09,002 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:09,003 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:09,003 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:09,006 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:09,637 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:09,638 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_created():278] file/dir created: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:11,638 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:12,006 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:12,279 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:12,280 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:12,280 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:12,282 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:12,640 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:12,876 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:12,876 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:12,877 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:12,878 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:12,883 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:12,883 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:12,883 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:12,885 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:12,889 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:12,889 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:12,889 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:12,891 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:13,061 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,062 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,063 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,064 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,064 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,065 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,066 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,067 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,067 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,068 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,069 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,070 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,071 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,071 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,072 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,073 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:13,651 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:15,652 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:15,799 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:15,842 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:15,843 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:15,847 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:16,392 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,394 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:16,394 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:16,398 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:16,399 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,400 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,400 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:16,402 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:16,405 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:16,405 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:16,405 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:16,407 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:16,654 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:16,661 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,661 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,662 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,663 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,663 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,664 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,664 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,665 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,666 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,666 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,666 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,667 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,668 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,668 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,669 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:16,669 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:17,408 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:17,654 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:19,231 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:19,235 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:19,236 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:19,241 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:19,656 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:19,827 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:19,828 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:19,828 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:19,832 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:19,833 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:19,835 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:19,835 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:19,838 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:19,840 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:19,875 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:19,875 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:19,878 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:20,233 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,233 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,234 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,234 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,235 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,235 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,236 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,236 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,237 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,238 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,238 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,239 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,239 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,240 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,240 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,241 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:20,690 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:20,691 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:21,658 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:22,675 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:22,678 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:22,680 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:22,681 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:22,685 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:23,270 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,271 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:23,271 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:23,274 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:23,276 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,277 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,279 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:23,279 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:23,282 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:23,282 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:23,282 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:23,285 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:23,659 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:23,799 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,800 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,800 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,801 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,801 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,802 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,802 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,803 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,804 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,804 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,805 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,805 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,806 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,806 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,807 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:23,807 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:25,660 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:25,691 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:26,109 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:26,139 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:26,140 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:26,143 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:26,662 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:26,704 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:26,705 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:26,705 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:26,708 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:26,710 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:26,711 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:26,711 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:26,714 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:26,717 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:26,718 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:26,718 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:26,721 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:27,369 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,370 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,370 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,371 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,371 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,372 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,372 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,373 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,373 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,374 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,375 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,375 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,376 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,376 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,377 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,377 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:27,663 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:27,724 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:28,665 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/config.yaml
+2024-07-22 17:43:29,550 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:29,603 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:29,604 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:29,608 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:29,666 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:29,666 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:30,145 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,146 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:30,146 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:30,150 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:30,151 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,152 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,153 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:30,154 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:30,156 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:30,157 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:30,157 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:30,159 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:30,668 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:30,692 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:30,934 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,935 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,936 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,936 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,937 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,938 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,938 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,939 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,940 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,940 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,941 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,942 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,942 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,943 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,944 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:30,944 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:31,668 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:32,986 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:33,032 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:33,033 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:33,033 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:33,037 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:33,584 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:33,585 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:33,585 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:33,588 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:33,590 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:33,591 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:33,592 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:33,592 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:33,603 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:33,603 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:33,604 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:33,606 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:33,670 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:34,492 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,493 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,493 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,494 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,494 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,495 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,495 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,496 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,496 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,497 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,498 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,498 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,499 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,499 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,500 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:34,500 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:35,671 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:35,693 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:36,427 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:36,457 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:36,458 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:36,461 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:36,672 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:37,022 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:37,024 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:37,024 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:37,028 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:37,028 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:37,030 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:37,030 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:37,033 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:37,035 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:37,037 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:37,037 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:37,040 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:37,673 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:38,040 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:38,051 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,051 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,052 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,053 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,053 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,054 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,055 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,055 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,056 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,056 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,057 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,058 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,058 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,059 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,060 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:38,060 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:39,674 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:39,873 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:39,879 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:39,881 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:39,886 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:40,468 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:40,469 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:40,470 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:40,473 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:40,474 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:40,476 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:40,476 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:40,476 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:40,480 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:40,480 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:40,480 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:40,483 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:40,676 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:40,694 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:41,602 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,602 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,603 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,603 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,604 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,605 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,605 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,606 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,607 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,607 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,608 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,608 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,609 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,610 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,610 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,611 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:41,676 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:43,313 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:43,319 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:43,320 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:43,320 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:43,323 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:43,678 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:43,907 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:43,909 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:43,909 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:43,912 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:43,913 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:43,914 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:43,916 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:43,916 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:43,919 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:43,919 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:43,919 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:43,922 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:45,156 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,156 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,157 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,158 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,158 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,159 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,160 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,160 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,161 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,162 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,162 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,163 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,163 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,164 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,165 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,165 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:45,680 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:45,695 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:46,752 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:46,798 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:46,799 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:46,803 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:47,347 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:47,348 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:47,348 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:47,353 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:47,354 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:47,355 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:47,355 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:47,357 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:47,360 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:47,361 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:47,361 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:47,364 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:47,682 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:48,364 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:48,716 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,716 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,717 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,717 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,718 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,719 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,719 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,720 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,721 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,721 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,722 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,723 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,723 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,724 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,724 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:48,725 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:49,683 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:50,199 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:50,228 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:50,229 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:50,233 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:50,684 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:50,695 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:50,796 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:50,798 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:50,798 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:50,802 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:50,803 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:50,804 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:50,804 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:50,807 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:50,809 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:50,811 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:50,811 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:50,814 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:51,686 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:52,279 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,279 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,280 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,281 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,281 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,282 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,283 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,283 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,284 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,285 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,285 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,286 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,287 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,287 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,288 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:52,288 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:53,649 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:53,670 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:53,671 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:53,671 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:53,674 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:53,690 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:53,690 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:54,244 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:54,245 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:54,245 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:54,248 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:54,250 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:54,251 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:54,252 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:54,252 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:54,255 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:54,255 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:54,255 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:54,258 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:54,691 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:55,692 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:43:55,696 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:43:55,830 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,830 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,831 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,831 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,832 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,833 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,833 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,834 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,835 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,835 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,836 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,837 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,837 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,838 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,838 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:55,839 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:56,772 DEBUG   SystemMonitor:2041690 [system_monitor.py:_start():161] Starting system metrics aggregation loop
+2024-07-22 17:43:56,802 DEBUG   SenderThread:2041690 [sender.py:send():336] send: stats
+2024-07-22 17:43:57,087 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:57,116 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:57,117 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:57,120 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:57,683 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:57,684 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:57,684 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:57,687 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:57,689 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:57,690 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:57,691 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:57,691 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:57,694 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:43:57,694 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:57,695 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:43:57,695 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:43:57,697 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:43:58,698 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:43:59,385 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,385 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,386 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,386 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,387 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,387 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,388 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,389 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,389 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,390 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,390 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,391 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,391 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,392 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,392 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,393 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:43:59,696 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:00,527 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:00,532 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:00,534 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:00,537 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:00,697 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:00,698 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:01,121 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:01,122 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:01,123 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:01,126 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:01,127 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:01,129 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:01,130 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:01,130 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:01,133 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:01,133 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:01,133 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:01,136 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:01,699 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:02,937 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,938 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,938 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,939 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,940 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,940 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,941 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,941 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,942 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,942 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,943 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,943 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,944 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,944 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,945 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:02,946 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:03,700 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:03,969 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:03,980 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:03,981 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:03,982 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:03,990 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:04,566 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:04,567 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:04,567 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:04,570 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:04,572 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:04,573 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:04,573 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:04,576 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:04,579 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:04,580 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:04,580 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:04,583 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:04,701 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:05,698 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:05,702 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:06,500 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,501 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,501 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,502 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,502 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,503 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,503 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,504 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,504 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,505 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,506 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,506 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,507 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,507 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,508 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:06,508 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:07,417 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:07,446 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:07,447 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:07,450 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:07,703 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:07,704 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:08,011 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:08,012 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:08,012 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:08,016 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:08,017 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:08,018 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:08,019 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:08,020 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:08,022 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:08,022 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:08,022 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:08,025 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:08,705 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:09,025 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:09,705 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:10,052 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,052 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,053 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,053 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,054 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,054 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,055 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,055 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,056 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,057 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,057 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,058 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,058 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,059 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,059 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,060 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,698 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:10,855 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:10,871 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:10,872 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:10,876 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:11,450 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:11,451 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:11,451 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:11,455 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:11,456 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:11,457 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:11,459 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:11,459 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:11,461 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:11,462 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:11,462 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:11,464 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:11,707 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:13,604 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,605 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,605 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,606 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,606 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,607 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,608 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,608 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,609 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,609 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,610 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,611 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,611 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,612 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,612 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,613 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:13,708 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:14,296 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:14,310 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:14,312 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:14,312 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:14,315 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:14,710 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:14,892 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:14,893 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:14,893 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:14,896 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:14,898 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:14,899 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:14,900 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:14,900 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:14,903 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:14,903 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:14,903 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:14,906 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:15,699 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:15,711 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:17,160 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,160 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,161 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,161 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,162 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,162 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,163 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,163 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,164 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,164 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,165 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,166 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,166 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,167 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,167 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,168 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,712 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:17,737 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:17,758 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:17,760 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:17,763 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:18,333 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:18,335 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:18,335 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:18,338 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:18,339 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:18,340 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:18,342 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:18,342 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:18,345 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:18,345 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:18,345 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:18,348 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:18,713 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:19,348 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:19,714 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:20,700 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:20,718 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,718 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,719 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,719 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,720 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,720 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,721 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,722 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,722 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,723 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,723 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,724 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,724 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,725 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,726 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:20,726 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:21,181 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:21,187 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:21,188 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:21,191 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:21,716 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:21,777 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:21,778 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:21,779 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:21,782 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:21,783 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:21,784 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:21,786 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:21,786 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:21,789 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:21,789 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:21,789 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:21,791 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:23,718 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:24,272 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,273 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,273 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,274 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,274 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,275 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,275 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,276 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,277 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,277 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,278 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,278 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,279 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,279 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,280 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,280 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,622 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:24,665 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:24,666 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:24,666 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:24,674 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:24,719 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:25,219 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:25,220 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:25,220 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:25,225 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:25,227 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:25,228 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:25,228 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:25,228 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:25,231 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:25,231 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:25,231 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:25,234 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:25,701 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:25,721 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:26,803 DEBUG   SenderThread:2041690 [sender.py:send():336] send: stats
+2024-07-22 17:44:27,722 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:27,828 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,829 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,829 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,830 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,831 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,831 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,832 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,832 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,833 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,834 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,834 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,835 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,835 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,836 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,837 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:27,837 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:28,065 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:28,107 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:28,108 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:28,111 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:28,661 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:28,662 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:28,663 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:28,666 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:28,667 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:28,668 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:28,670 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:28,670 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:28,673 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:28,673 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:28,673 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:28,675 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:28,723 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:29,676 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:29,724 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:30,702 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:31,382 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,383 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,383 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,384 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,385 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,385 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,386 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,386 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,387 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,388 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,388 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,389 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,389 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,390 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,391 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,391 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,506 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:31,552 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:31,553 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:31,556 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:31,725 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:31,725 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:32,102 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:32,104 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:32,104 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:32,107 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:32,108 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:32,110 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:32,111 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:32,111 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:32,114 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:32,114 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:32,114 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:32,117 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:32,727 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:33,727 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:34,937 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,937 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,938 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,938 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,939 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,939 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,940 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,941 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,941 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,942 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,942 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,943 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,943 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,944 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,944 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,945 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,946 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:34,983 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:34,985 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:34,985 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:34,988 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:35,545 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:35,546 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:35,546 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:35,551 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:35,551 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:35,553 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:35,554 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:35,554 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:35,557 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:35,557 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:35,557 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:35,560 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:35,703 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:35,729 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:37,730 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:38,381 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:38,383 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:38,383 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:38,386 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:38,731 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:38,978 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:38,979 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:38,979 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:38,982 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:38,984 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:38,985 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:38,986 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:38,986 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:38,989 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:38,989 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:38,989 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:38,992 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:39,116 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,117 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,117 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,118 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,119 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,119 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,120 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,120 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,121 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,122 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,122 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,123 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,124 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,124 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,125 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,126 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:39,733 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:39,992 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:40,703 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:41,734 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:41,823 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:41,858 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:41,859 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:41,862 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:42,420 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,421 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:42,421 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:42,424 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:42,425 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,427 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,428 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:42,428 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:42,431 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:42,431 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:42,431 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:42,434 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:42,688 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,688 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,689 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,690 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,690 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,691 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,692 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,692 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,693 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,693 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,694 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,695 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,695 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,696 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,697 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,697 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:42,735 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:43,735 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:45,266 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:45,272 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:45,273 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:45,273 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:45,276 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:45,704 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:45,737 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:45,863 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:45,864 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:45,864 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:45,870 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:45,870 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:45,871 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:45,872 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:45,872 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:45,875 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:45,875 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:45,875 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:45,878 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:46,263 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,263 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,264 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,264 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,265 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,266 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,266 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,267 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,268 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,268 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,269 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,270 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,270 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,271 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,271 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:46,272 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:47,739 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:48,710 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:48,729 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:48,730 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:48,733 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:48,741 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:49,306 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,307 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:49,307 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:49,311 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:49,312 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,314 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,315 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:49,315 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:49,318 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:49,318 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:49,318 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:49,321 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:49,742 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:49,836 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,837 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,837 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,838 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,839 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,839 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,840 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,840 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,841 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,842 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,842 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,843 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,844 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,844 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,845 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:49,846 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:50,321 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:50,705 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:51,743 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:52,155 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:52,159 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:52,160 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:52,163 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:52,744 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:52,753 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:52,754 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:52,754 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:52,757 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:52,759 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:52,760 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:52,761 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:52,761 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:52,764 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:52,764 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:52,764 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:52,767 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:53,413 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,414 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,415 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,415 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,416 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,416 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,417 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,418 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,418 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,419 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,420 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,420 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,421 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,422 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,422 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,423 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:53,746 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:55,601 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:55,615 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:55,617 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:55,618 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:44:55,620 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:55,705 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: keepalive
+2024-07-22 17:44:55,748 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:55,748 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:56,197 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,198 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:56,198 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:56,203 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,203 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:56,205 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,206 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:56,206 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:56,209 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:56,209 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:56,209 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:56,212 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:56,749 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:44:56,826 DEBUG   SenderThread:2041690 [sender.py:send():336] send: stats
+2024-07-22 17:44:56,987 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,988 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,989 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,989 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,990 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,991 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,991 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,992 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,993 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,993 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,994 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,994 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,995 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,996 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,996 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:56,997 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:57,750 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:44:59,043 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:59,060 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:59,061 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:59,064 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:59,638 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:59,640 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:59,640 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:59,643 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:59,644 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:59,646 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: partial_history
+2024-07-22 17:44:59,646 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:59,648 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:59,651 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:59,651 DEBUG   SenderThread:2041690 [sender.py:send():336] send: history
+2024-07-22 17:44:59,651 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: summary_record
+2024-07-22 17:44:59,654 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:59,654 DEBUG   SenderThread:2041690 [sender.py:send():336] send: exit
+2024-07-22 17:44:59,654 INFO    SenderThread:2041690 [sender.py:send_exit():559] handling exit code: 0
+2024-07-22 17:44:59,654 INFO    SenderThread:2041690 [sender.py:send_exit():561] handling runtime: 122
+2024-07-22 17:44:59,656 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:44:59,657 INFO    SenderThread:2041690 [sender.py:send_exit():567] send defer
+2024-07-22 17:44:59,657 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:44:59,657 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 0
+2024-07-22 17:44:59,657 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:44:59,657 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 0
+2024-07-22 17:44:59,657 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 1
+2024-07-22 17:44:59,657 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:44:59,657 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 1
+2024-07-22 17:44:59,657 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:44:59,657 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 1
+2024-07-22 17:44:59,657 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 2
+2024-07-22 17:44:59,657 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:44:59,657 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 2
+2024-07-22 17:44:59,657 INFO    HandlerThread:2041690 [system_monitor.py:finish():193] Stopping system monitor
+2024-07-22 17:44:59,658 DEBUG   SystemMonitor:2041690 [system_monitor.py:_start():168] Finished system metrics aggregation loop
+2024-07-22 17:44:59,658 DEBUG   SystemMonitor:2041690 [system_monitor.py:_start():172] Publishing last batch of metrics
+2024-07-22 17:44:59,659 INFO    HandlerThread:2041690 [interfaces.py:finish():199] Joined cpu monitor
+2024-07-22 17:44:59,660 INFO    HandlerThread:2041690 [interfaces.py:finish():199] Joined disk monitor
+2024-07-22 17:44:59,752 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:45:00,023 INFO    HandlerThread:2041690 [interfaces.py:finish():199] Joined gpu monitor
+2024-07-22 17:45:00,024 INFO    HandlerThread:2041690 [interfaces.py:finish():199] Joined memory monitor
+2024-07-22 17:45:00,024 INFO    HandlerThread:2041690 [interfaces.py:finish():199] Joined network monitor
+2024-07-22 17:45:00,025 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:00,025 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 2
+2024-07-22 17:45:00,025 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 3
+2024-07-22 17:45:00,025 DEBUG   SenderThread:2041690 [sender.py:send():336] send: stats
+2024-07-22 17:45:00,025 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:00,025 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 3
+2024-07-22 17:45:00,025 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:00,025 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 3
+2024-07-22 17:45:00,025 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 4
+2024-07-22 17:45:00,026 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:00,026 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 4
+2024-07-22 17:45:00,026 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:00,026 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 4
+2024-07-22 17:45:00,026 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 5
+2024-07-22 17:45:00,026 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:00,026 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 5
+2024-07-22 17:45:00,132 DEBUG   SenderThread:2041690 [sender.py:send():336] send: summary
+2024-07-22 17:45:00,136 INFO    SenderThread:2041690 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-07-22 17:45:00,136 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:00,136 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 5
+2024-07-22 17:45:00,136 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 6
+2024-07-22 17:45:00,136 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:00,136 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 6
+2024-07-22 17:45:00,136 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:00,136 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 6
+2024-07-22 17:45:00,136 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 7
+2024-07-22 17:45:00,136 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: status_report
+2024-07-22 17:45:00,136 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:00,137 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 7
+2024-07-22 17:45:00,137 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:00,137 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 7
+2024-07-22 17:45:00,650 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: poll_exit
+2024-07-22 17:45:00,753 INFO    Thread-12 :2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:45:01,029 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 8
+2024-07-22 17:45:01,030 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: poll_exit
+2024-07-22 17:45:01,030 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:01,030 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 8
+2024-07-22 17:45:01,030 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:01,030 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 8
+2024-07-22 17:45:01,030 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 9
+2024-07-22 17:45:01,030 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:01,030 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 9
+2024-07-22 17:45:01,030 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:01,031 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 9
+2024-07-22 17:45:01,031 INFO    SenderThread:2041690 [dir_watcher.py:finish():365] shutting down directory watcher
+2024-07-22 17:45:01,650 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: poll_exit
+2024-07-22 17:45:01,754 INFO    SenderThread:2041690 [dir_watcher.py:_on_file_modified():295] file/dir modified: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:45:01,755 INFO    SenderThread:2041690 [dir_watcher.py:finish():395] scan: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files
+2024-07-22 17:45:01,755 INFO    SenderThread:2041690 [dir_watcher.py:finish():409] scan save: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/requirements.txt requirements.txt
+2024-07-22 17:45:01,755 INFO    SenderThread:2041690 [dir_watcher.py:finish():409] scan save: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/conda-environment.yaml conda-environment.yaml
+2024-07-22 17:45:01,757 INFO    SenderThread:2041690 [dir_watcher.py:finish():409] scan save: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log output.log
+2024-07-22 17:45:01,760 INFO    SenderThread:2041690 [dir_watcher.py:finish():409] scan save: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-metadata.json wandb-metadata.json
+2024-07-22 17:45:01,760 INFO    SenderThread:2041690 [dir_watcher.py:finish():409] scan save: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json wandb-summary.json
+2024-07-22 17:45:01,761 INFO    SenderThread:2041690 [dir_watcher.py:finish():409] scan save: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/config.yaml config.yaml
+2024-07-22 17:45:01,766 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 10
+2024-07-22 17:45:01,766 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: poll_exit
+2024-07-22 17:45:01,766 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:01,768 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 10
+2024-07-22 17:45:01,769 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:01,769 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 10
+2024-07-22 17:45:01,769 INFO    SenderThread:2041690 [file_pusher.py:finish():164] shutting down file pusher
+2024-07-22 17:45:02,000 INFO    wandb-upload_1:2041690 [upload_job.py:push():138] Uploaded file /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/conda-environment.yaml
+2024-07-22 17:45:02,137 INFO    wandb-upload_3:2041690 [upload_job.py:push():138] Uploaded file /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/wandb-summary.json
+2024-07-22 17:45:02,137 INFO    wandb-upload_2:2041690 [upload_job.py:push():138] Uploaded file /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/output.log
+2024-07-22 17:45:02,137 INFO    wandb-upload_0:2041690 [upload_job.py:push():138] Uploaded file /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/requirements.txt
+2024-07-22 17:45:02,200 INFO    wandb-upload_4:2041690 [upload_job.py:push():138] Uploaded file /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/files/config.yaml
+2024-07-22 17:45:02,400 INFO    Thread-11 (_thread_body):2041690 [sender.py:transition_state():587] send defer: 11
+2024-07-22 17:45:02,401 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:02,401 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 11
+2024-07-22 17:45:02,401 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:02,401 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 11
+2024-07-22 17:45:02,402 INFO    SenderThread:2041690 [file_pusher.py:join():169] waiting for file pusher
+2024-07-22 17:45:02,402 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 12
+2024-07-22 17:45:02,402 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:02,402 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 12
+2024-07-22 17:45:02,402 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:02,402 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 12
+2024-07-22 17:45:02,651 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: poll_exit
+2024-07-22 17:45:03,055 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 13
+2024-07-22 17:45:03,056 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: poll_exit
+2024-07-22 17:45:03,056 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:03,056 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 13
+2024-07-22 17:45:03,056 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:03,057 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 13
+2024-07-22 17:45:03,057 INFO    SenderThread:2041690 [sender.py:transition_state():587] send defer: 14
+2024-07-22 17:45:03,057 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: defer
+2024-07-22 17:45:03,057 DEBUG   SenderThread:2041690 [sender.py:send():336] send: final
+2024-07-22 17:45:03,057 INFO    HandlerThread:2041690 [handler.py:handle_request_defer():170] handle defer: 14
+2024-07-22 17:45:03,057 DEBUG   SenderThread:2041690 [sender.py:send():336] send: footer
+2024-07-22 17:45:03,057 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: defer
+2024-07-22 17:45:03,057 INFO    SenderThread:2041690 [sender.py:send_request_defer():583] handle sender defer: 14
+2024-07-22 17:45:03,058 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: poll_exit
+2024-07-22 17:45:03,058 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: poll_exit
+2024-07-22 17:45:03,058 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: poll_exit
+2024-07-22 17:45:03,059 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: poll_exit
+2024-07-22 17:45:03,059 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: server_info
+2024-07-22 17:45:03,059 DEBUG   SenderThread:2041690 [sender.py:send_request():363] send_request: server_info
+2024-07-22 17:45:03,061 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: get_summary
+2024-07-22 17:45:03,062 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: sampled_history
+2024-07-22 17:45:03,222 INFO    MainThread:2041690 [wandb_run.py:_footer_history_summary_info():3429] rendering history
+2024-07-22 17:45:03,223 INFO    MainThread:2041690 [wandb_run.py:_footer_history_summary_info():3461] rendering summary
+2024-07-22 17:45:03,224 INFO    MainThread:2041690 [wandb_run.py:_footer_sync_info():3387] logging synced files
+2024-07-22 17:45:03,224 DEBUG   HandlerThread:2041690 [handler.py:handle_request():144] handle_request: shutdown
+2024-07-22 17:45:03,224 INFO    HandlerThread:2041690 [handler.py:finish():842] shutting down handler
+2024-07-22 17:45:04,059 INFO    WriterThread:2041690 [datastore.py:close():298] close: /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240722_174256-e3hczpg7/run-e3hczpg7.wandb
+2024-07-22 17:45:04,222 INFO    SenderThread:2041690 [sender.py:finish():1504] shutting down sender
+2024-07-22 17:45:04,222 INFO    SenderThread:2041690 [file_pusher.py:finish():164] shutting down file pusher
+2024-07-22 17:45:04,223 INFO    SenderThread:2041690 [file_pusher.py:join():169] waiting for file pusher

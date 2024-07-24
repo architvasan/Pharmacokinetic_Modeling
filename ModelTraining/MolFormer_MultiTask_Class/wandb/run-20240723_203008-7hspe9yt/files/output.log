@@ -1,0 +1,30 @@
+NUM TASKS: 11
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+TASKNAMES: ['CAT', 'GPIG', 'QUAIL', 'DUCK', 'MAMMAL', 'CHICKEN', 'DOG', 'WOMAN', 'RABBIT', 'MAN', 'BIRD']
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:175: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  "best own ep", "best own ep tloss", "best own ep vloss", "best own ep AUC", ]).fillna(0)
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 176, in <module>
+    performance_df["task"] = tasknames
+    ~~~~~~~~~~~~~~^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 4311, in __setitem__
+    self._set_item(key, value)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 4524, in _set_item
+    value, refs = self._sanitize_column(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 5266, in _sanitize_column
+    com.require_length_match(value, self.index)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/common.py", line 573, in require_length_match
+    raise ValueError(
+ValueError: Length of values (11) does not match length of index (12)

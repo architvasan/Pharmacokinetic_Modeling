@@ -349,3 +349,3187 @@ Traceback (most recent call last):
     raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
 wandb.errors.CommError: Sweep entity/project/q109wo3s not found
 
+2024-07-18 16:49:38 ERROR Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1065, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep entity/project/un4ymxph not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 105, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 926, in sweep
+    getattr(api, "%s_sweep" % state)(sweep_id, entity=entity, project=project)
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in cancel_sweep
+    return self.api.cancel_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4137, in cancel_sweep
+    self.set_sweep_state(
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4081, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1065, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep entity/project/un4ymxph not found
+
+2024-07-18 16:50:29 ERROR Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1065, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep entity/Multitask Class Oral Test/un4ymxph not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 105, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 926, in sweep
+    getattr(api, "%s_sweep" % state)(sweep_id, entity=entity, project=project)
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in cancel_sweep
+    return self.api.cancel_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4137, in cancel_sweep
+    self.set_sweep_state(
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4081, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1065, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep entity/Multitask Class Oral Test/un4ymxph not found
+
+2024-07-18 16:51:49 ERROR 400 response executing GraphQL.
+2024-07-18 16:51:49 ERROR {"errors":[{"message":"entityName required for project query","path":["project"]}],"data":{"project":null}}
+2024-07-18 16:51:49 ERROR Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1055, in sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 341, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 105, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 926, in sweep
+    getattr(api, "%s_sweep" % state)(sweep_id, entity=entity, project=project)
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in cancel_sweep
+    return self.api.cancel_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4137, in cancel_sweep
+    self.set_sweep_state(
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4081, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 51, in wrapper
+    raise CommError(message, error)
+wandb.errors.CommError: entityName required for project query (Error 400: Bad Request)
+
+2024-07-18 16:52:04 ERROR 400 response executing GraphQL.
+2024-07-18 16:52:04 ERROR {"errors":[{"message":"entityName required for project query","path":["project"]}],"data":{"project":null}}
+2024-07-18 16:52:04 ERROR Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1055, in sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 341, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 105, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 926, in sweep
+    getattr(api, "%s_sweep" % state)(sweep_id, entity=entity, project=project)
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in cancel_sweep
+    return self.api.cancel_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4137, in cancel_sweep
+    self.set_sweep_state(
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4081, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 51, in wrapper
+    raise CommError(message, error)
+wandb.errors.CommError: entityName required for project query (Error 400: Bad Request)
+
+2024-07-19 20:30:25 ERROR 400 response executing GraphQL.
+2024-07-19 20:30:25 ERROR 400 response executing GraphQL.
+2024-07-19 20:30:25 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2024-07-19 20:30:25 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2024-07-19 20:30:25 ERROR 400 response executing GraphQL.
+2024-07-19 20:30:25 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2024-07-19 20:30:25 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 725, in sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 27, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2024-07-19 20:30:25 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 725, in sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 27, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2024-07-19 20:30:25 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 725, in sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 27, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2024-07-19 20:36:35 INFO Running runs: []
+2024-07-19 20:36:35 INFO Running runs: []
+2024-07-19 20:36:35 INFO Running runs: []
+2024-07-19 20:36:35 INFO Agent received command: run
+2024-07-19 20:36:35 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:35 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:35 INFO Agent received command: run
+2024-07-19 20:36:35 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:35 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:35 INFO Agent received command: run
+2024-07-19 20:36:35 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:35 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:40 INFO Running runs: ['zzau9ufg']
+2024-07-19 20:36:40 INFO Cleaning up finished run: zzau9ufg
+2024-07-19 20:36:40 INFO Running runs: ['0q59eeae']
+2024-07-19 20:36:40 INFO Cleaning up finished run: 0q59eeae
+2024-07-19 20:36:40 INFO Running runs: ['w7pau6jn']
+2024-07-19 20:36:40 INFO Cleaning up finished run: w7pau6jn
+2024-07-19 20:36:40 INFO Agent received command: run
+2024-07-19 20:36:40 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:40 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:41 INFO Agent received command: run
+2024-07-19 20:36:41 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:41 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:41 INFO Agent received command: run
+2024-07-19 20:36:41 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:41 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:45 INFO Running runs: ['gktwy8se']
+2024-07-19 20:36:45 INFO Cleaning up finished run: gktwy8se
+2024-07-19 20:36:46 INFO Running runs: ['k34hn4s3']
+2024-07-19 20:36:46 INFO Cleaning up finished run: k34hn4s3
+2024-07-19 20:36:46 INFO Agent received command: run
+2024-07-19 20:36:46 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:46 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:46 INFO Running runs: ['13437dso']
+2024-07-19 20:36:46 INFO Cleaning up finished run: 13437dso
+2024-07-19 20:36:46 INFO Agent received command: run
+2024-07-19 20:36:46 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:46 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:46 INFO Agent received command: run
+2024-07-19 20:36:46 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:36:46 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --task=['gpig'] --test_size=0.2
+2024-07-19 20:36:51 INFO Running runs: ['uft1iwkg']
+2024-07-19 20:36:51 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:36:51 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:36:51 INFO Running runs: ['wibcuif2']
+2024-07-19 20:36:51 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:36:51 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:36:51 INFO Running runs: ['55on9rlq']
+2024-07-19 20:36:51 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:36:51 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:52:22 INFO Running runs: []
+2024-07-19 20:52:22 INFO Running runs: []
+2024-07-19 20:52:22 INFO Running runs: []
+2024-07-19 20:52:22 INFO Agent received command: run
+2024-07-19 20:52:22 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:22 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:23 INFO Agent received command: run
+2024-07-19 20:52:23 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:23 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:23 INFO Agent received command: run
+2024-07-19 20:52:23 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:23 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:27 INFO Running runs: ['skwj2znl']
+2024-07-19 20:52:28 INFO Running runs: ['nkjo4i1c']
+2024-07-19 20:52:28 INFO Running runs: ['kkfrhusu']
+2024-07-19 20:52:33 INFO Cleaning up finished run: skwj2znl
+2024-07-19 20:52:33 INFO Cleaning up finished run: nkjo4i1c
+2024-07-19 20:52:33 INFO Cleaning up finished run: kkfrhusu
+2024-07-19 20:52:33 INFO Agent received command: run
+2024-07-19 20:52:33 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:33 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:33 INFO Agent received command: run
+2024-07-19 20:52:33 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:33 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:33 INFO Agent received command: run
+2024-07-19 20:52:33 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:33 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:38 INFO Running runs: ['0npcvs4e']
+2024-07-19 20:52:38 INFO Cleaning up finished run: 0npcvs4e
+2024-07-19 20:52:38 INFO Running runs: ['gm5npbof']
+2024-07-19 20:52:38 INFO Cleaning up finished run: gm5npbof
+2024-07-19 20:52:38 INFO Running runs: ['kae05rah']
+2024-07-19 20:52:38 INFO Cleaning up finished run: kae05rah
+2024-07-19 20:52:38 INFO Agent received command: run
+2024-07-19 20:52:38 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:38 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:38 INFO Agent received command: run
+2024-07-19 20:52:38 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:38 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:38 INFO Agent received command: run
+2024-07-19 20:52:38 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:52:38 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --task=['gpig'] --test_size=0.2
+2024-07-19 20:52:43 INFO Running runs: ['rii4te85']
+2024-07-19 20:52:43 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:52:43 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:52:43 INFO Running runs: ['b66dwvi8']
+2024-07-19 20:52:43 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:52:43 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:52:43 INFO Running runs: ['wusngx5v']
+2024-07-19 20:52:43 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:52:43 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:58:53 INFO Running runs: []
+2024-07-19 20:58:53 INFO Running runs: []
+2024-07-19 20:58:53 INFO Running runs: []
+2024-07-19 20:58:53 INFO Agent received command: run
+2024-07-19 20:58:53 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:58:53 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --task=['gpig'] --test_size=0.2
+2024-07-19 20:58:53 INFO Agent received command: run
+2024-07-19 20:58:53 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:58:53 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --task=['gpig'] --test_size=0.2
+2024-07-19 20:58:54 INFO Agent received command: run
+2024-07-19 20:58:54 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:58:54 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --task=['gpig'] --test_size=0.2
+2024-07-19 20:58:58 INFO Running runs: ['gryhlbo5']
+2024-07-19 20:58:58 INFO Running runs: ['t3nr2etc']
+2024-07-19 20:58:59 INFO Running runs: ['8npz8kcr']
+2024-07-19 20:59:04 INFO Cleaning up finished run: gryhlbo5
+2024-07-19 20:59:04 INFO Cleaning up finished run: t3nr2etc
+2024-07-19 20:59:04 INFO Cleaning up finished run: 8npz8kcr
+2024-07-19 20:59:04 INFO Agent received command: run
+2024-07-19 20:59:04 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:59:04 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --task=['gpig'] --test_size=0.2
+2024-07-19 20:59:04 INFO Agent received command: run
+2024-07-19 20:59:04 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:59:04 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --task=['gpig'] --test_size=0.2
+2024-07-19 20:59:04 INFO Agent received command: run
+2024-07-19 20:59:04 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:59:04 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --task=['gpig'] --test_size=0.2
+2024-07-19 20:59:09 INFO Running runs: ['rq0834w6']
+2024-07-19 20:59:09 INFO Cleaning up finished run: rq0834w6
+2024-07-19 20:59:09 INFO Running runs: ['ep1kqkuv']
+2024-07-19 20:59:09 INFO Cleaning up finished run: ep1kqkuv
+2024-07-19 20:59:09 INFO Running runs: ['tsw1l2fo']
+2024-07-19 20:59:09 INFO Cleaning up finished run: tsw1l2fo
+2024-07-19 20:59:09 INFO Agent received command: run
+2024-07-19 20:59:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:59:09 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --task=['gpig'] --test_size=0.2
+2024-07-19 20:59:09 INFO Agent received command: run
+2024-07-19 20:59:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:59:09 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --task=['gpig'] --test_size=0.2
+2024-07-19 20:59:09 INFO Agent received command: run
+2024-07-19 20:59:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 20:59:09 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --task=['gpig'] --test_size=0.2
+2024-07-19 20:59:14 INFO Running runs: ['y32q9nna']
+2024-07-19 20:59:14 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:59:14 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 20:59:14 INFO Running runs: ['zsi83c4j']
+2024-07-19 20:59:14 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 20:59:14 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 21:30:41 INFO Running runs: []
+2024-07-19 21:30:41 INFO Running runs: []
+2024-07-19 21:30:41 INFO Running runs: []
+2024-07-19 21:30:41 INFO Agent received command: run
+2024-07-19 21:30:41 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:30:41 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --task=['gpig'] --test_size=0.2
+2024-07-19 21:30:41 INFO Agent received command: run
+2024-07-19 21:30:41 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:30:41 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --task=['gpig'] --test_size=0.2
+2024-07-19 21:30:41 INFO Agent received command: run
+2024-07-19 21:30:41 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:30:41 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --task=['gpig'] --test_size=0.2
+2024-07-19 21:30:46 INFO Running runs: ['qu7zxha7']
+2024-07-19 21:30:46 INFO Running runs: ['0ak1hkec']
+2024-07-19 21:30:46 INFO Running runs: ['6000nop4']
+2024-07-19 21:30:51 INFO Cleaning up finished run: qu7zxha7
+2024-07-19 21:30:52 INFO Cleaning up finished run: 0ak1hkec
+2024-07-19 21:30:52 INFO Cleaning up finished run: 6000nop4
+2024-07-19 21:30:52 INFO Agent received command: run
+2024-07-19 21:30:52 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:30:52 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --task=['gpig'] --test_size=0.2
+2024-07-19 21:30:52 INFO Agent received command: run
+2024-07-19 21:30:52 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:30:52 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --task=['gpig'] --test_size=0.2
+2024-07-19 21:30:52 INFO Agent received command: run
+2024-07-19 21:30:52 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:30:52 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --task=['gpig'] --test_size=0.2
+2024-07-19 21:30:57 INFO Running runs: ['8znlnpg2']
+2024-07-19 21:30:57 INFO Running runs: ['bjvg1t96']
+2024-07-19 21:30:57 INFO Running runs: ['069v130l']
+2024-07-19 21:31:02 INFO Cleaning up finished run: 8znlnpg2
+2024-07-19 21:31:02 INFO Cleaning up finished run: bjvg1t96
+2024-07-19 21:31:02 INFO Cleaning up finished run: 069v130l
+2024-07-19 21:31:02 INFO Agent received command: run
+2024-07-19 21:31:02 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:31:02 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --task=['gpig'] --test_size=0.2
+2024-07-19 21:31:02 INFO Agent received command: run
+2024-07-19 21:31:02 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:31:02 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --task=['gpig'] --test_size=0.2
+2024-07-19 21:31:02 INFO Agent received command: run
+2024-07-19 21:31:02 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:31:02 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --task=['gpig'] --test_size=0.2
+2024-07-19 21:31:07 INFO Running runs: ['w6dhdyd0']
+2024-07-19 21:31:07 INFO Running runs: ['f25a24bl']
+2024-07-19 21:31:07 INFO Running runs: ['n1ctrxie']
+2024-07-19 21:31:12 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 21:31:12 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 21:31:12 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 21:31:12 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 21:31:12 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-07-19 21:31:12 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2024-07-19 21:45:21 INFO Running runs: []
+2024-07-19 21:45:21 INFO Running runs: []
+2024-07-19 21:45:21 INFO Running runs: []
+2024-07-19 21:45:21 INFO Agent received command: run
+2024-07-19 21:45:21 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:45:21 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --task=['gpig'] --test_size=0.2
+2024-07-19 21:45:22 INFO Agent received command: run
+2024-07-19 21:45:22 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:45:22 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --task=['gpig'] --test_size=0.2
+2024-07-19 21:45:22 INFO Agent received command: run
+2024-07-19 21:45:22 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	task: ['gpig']
+	test_size: 0.2
+2024-07-19 21:45:22 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --task=['gpig'] --test_size=0.2
+2024-07-19 21:45:27 INFO Running runs: ['5v1tjyyz']
+2024-07-19 21:45:27 INFO Running runs: ['yd1frvhb']
+2024-07-19 21:45:27 INFO Running runs: ['mn4pyt7v']
+2024-07-22 15:06:28 INFO Running runs: []
+2024-07-22 15:06:28 INFO Running runs: []
+2024-07-22 15:06:28 INFO Running runs: []
+2024-07-22 15:06:29 INFO Agent received command: run
+2024-07-22 15:06:29 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 15:06:29 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 15:06:29 INFO Agent received command: run
+2024-07-22 15:06:29 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 15:06:29 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 15:06:29 INFO Agent received command: run
+2024-07-22 15:06:29 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 15:06:29 INFO About to run command: /usr/bin/env python  --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 15:06:34 INFO Running runs: ['p9aqctmt']
+2024-07-22 15:06:34 INFO Running runs: ['fmh3cbsc']
+2024-07-22 15:06:34 INFO Running runs: ['2edp9qcj']
+2024-07-22 15:11:55 INFO Cleaning up finished run: fmh3cbsc
+2024-07-22 15:12:00 INFO Running runs: []
+2024-07-22 15:12:20 INFO Cleaning up finished run: 2edp9qcj
+2024-07-22 15:12:25 INFO Running runs: []
+2024-07-22 15:12:35 INFO Cleaning up finished run: p9aqctmt
+2024-07-22 15:12:41 INFO Running runs: []
+2024-07-22 15:14:58 ERROR Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1065, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 105, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/cli/cli.py", line 926, in sweep
+    getattr(api, "%s_sweep" % state)(sweep_id, entity=entity, project=project)
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in cancel_sweep
+    return self.api.cancel_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4137, in cancel_sweep
+    self.set_sweep_state(
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 4081, in set_sweep_state
+    s = self.sweep(sweep=sweep, entity=entity, project=project, specs="{}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/soft/applications/conda/2024-04-29/mconda3/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 1065, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 15:15:15 INFO Agent received command: exit
+2024-07-22 15:15:15 INFO Received exit command. Killing runs and quitting.
+2024-07-22 16:16:30 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:16:30 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:16:30 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:16:30 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:19:51 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:19:51 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:19:51 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:19:51 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/lvairusorg/Multitask_Class_Oral/ not found
+
+2024-07-22 16:25:16 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+2024-07-22 16:25:16 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+2024-07-22 16:25:16 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+2024-07-22 16:25:16 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/udj09vw2 not found
+
+2024-07-22 16:33:06 INFO Running runs: []
+2024-07-22 16:33:06 INFO Running runs: []
+2024-07-22 16:33:06 INFO Running runs: []
+2024-07-22 16:33:06 INFO Running runs: []
+2024-07-22 16:33:06 INFO Agent received command: run
+2024-07-22 16:33:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:33:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:33:06 INFO Agent received command: run
+2024-07-22 16:33:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:33:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:33:06 INFO Agent received command: run
+2024-07-22 16:33:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:33:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:33:06 INFO Agent received command: run
+2024-07-22 16:33:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:33:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:33:11 INFO Running runs: ['omoepj7i']
+2024-07-22 16:33:11 INFO Running runs: ['vjurq3u8']
+2024-07-22 16:33:11 INFO Running runs: ['7a067gm8']
+2024-07-22 16:33:11 INFO Running runs: ['deujdtc3']
+2024-07-22 16:34:22 INFO Cleaning up finished run: omoepj7i
+2024-07-22 16:34:22 INFO Agent received command: run
+2024-07-22 16:34:22 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:34:22 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:34:22 INFO Cleaning up finished run: vjurq3u8
+2024-07-22 16:34:23 INFO Cleaning up finished run: 7a067gm8
+2024-07-22 16:34:23 INFO Cleaning up finished run: deujdtc3
+2024-07-22 16:34:23 INFO Agent received command: run
+2024-07-22 16:34:23 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:34:23 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:34:23 INFO Agent received command: run
+2024-07-22 16:34:23 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:34:23 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:34:23 INFO Agent received command: run
+2024-07-22 16:34:23 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:34:23 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:34:27 INFO Running runs: ['vked8u9o']
+2024-07-22 16:34:28 INFO Running runs: ['1fs3sx5z']
+2024-07-22 16:34:28 INFO Running runs: ['mpu4j86t']
+2024-07-22 16:34:28 INFO Running runs: ['ukz38dg4']
+2024-07-22 16:34:33 INFO Cleaning up finished run: vked8u9o
+2024-07-22 16:34:33 INFO Cleaning up finished run: 1fs3sx5z
+2024-07-22 16:34:33 INFO Cleaning up finished run: mpu4j86t
+2024-07-22 16:34:33 INFO Cleaning up finished run: ukz38dg4
+2024-07-22 16:34:38 INFO Running runs: []
+2024-07-22 16:34:38 INFO Running runs: []
+2024-07-22 16:34:38 INFO Running runs: []
+2024-07-22 16:34:38 INFO Running runs: []
+2024-07-22 16:37:58 INFO Agent received command: exit
+2024-07-22 16:37:58 INFO Received exit command. Killing runs and quitting.
+2024-07-22 16:37:58 INFO Agent received command: exit
+2024-07-22 16:37:58 INFO Received exit command. Killing runs and quitting.
+2024-07-22 16:37:58 INFO Agent received command: exit
+2024-07-22 16:37:58 INFO Received exit command. Killing runs and quitting.
+2024-07-22 16:56:24 INFO Running runs: []
+2024-07-22 16:56:24 INFO Running runs: []
+2024-07-22 16:56:24 INFO Running runs: []
+2024-07-22 16:56:24 INFO Running runs: []
+2024-07-22 16:56:24 INFO Agent received command: run
+2024-07-22 16:56:24 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:56:24 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:56:24 INFO Agent received command: run
+2024-07-22 16:56:24 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:56:24 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:56:25 INFO Agent received command: run
+2024-07-22 16:56:25 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:56:25 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:56:25 INFO Agent received command: run
+2024-07-22 16:56:25 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:56:25 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:56:29 INFO Running runs: ['8dh05aa6']
+2024-07-22 16:56:29 INFO Running runs: ['g5m3ytof']
+2024-07-22 16:56:30 INFO Running runs: ['xelasshh']
+2024-07-22 16:56:30 INFO Running runs: ['su2noel0']
+2024-07-22 16:58:32 INFO Cleaning up finished run: 8dh05aa6
+2024-07-22 16:58:32 INFO Cleaning up finished run: g5m3ytof
+2024-07-22 16:58:32 INFO Cleaning up finished run: xelasshh
+2024-07-22 16:58:32 INFO Cleaning up finished run: su2noel0
+2024-07-22 16:58:36 INFO Agent received command: run
+2024-07-22 16:58:36 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:58:36 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:58:36 INFO Agent received command: run
+2024-07-22 16:58:36 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:58:36 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:58:37 INFO Agent received command: run
+2024-07-22 16:58:37 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:58:37 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:58:37 INFO Agent received command: run
+2024-07-22 16:58:37 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 16:58:37 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 16:58:41 INFO Running runs: ['cin9s7hm']
+2024-07-22 16:58:41 INFO Running runs: ['wuj6irzh']
+2024-07-22 16:58:42 INFO Running runs: ['8zjub2uv']
+2024-07-22 16:58:42 INFO Running runs: ['wdfejscl']
+2024-07-22 16:58:57 INFO Agent received command: exit
+2024-07-22 16:58:57 INFO Received exit command. Killing runs and quitting.
+2024-07-22 16:58:57 INFO Agent received command: exit
+2024-07-22 16:58:57 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:01:10 INFO Running runs: []
+2024-07-22 17:01:10 INFO Running runs: []
+2024-07-22 17:01:10 INFO Running runs: []
+2024-07-22 17:01:10 INFO Running runs: []
+2024-07-22 17:01:11 INFO Agent received command: run
+2024-07-22 17:01:11 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:01:11 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:01:11 INFO Agent received command: run
+2024-07-22 17:01:11 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:01:11 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:01:11 INFO Agent received command: run
+2024-07-22 17:01:11 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:01:11 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:01:11 INFO Agent received command: run
+2024-07-22 17:01:11 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:01:11 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:01:16 INFO Running runs: ['91jx28kp']
+2024-07-22 17:01:16 INFO Running runs: ['ytfc7l5x']
+2024-07-22 17:01:16 INFO Running runs: ['ybcvc341']
+2024-07-22 17:01:16 INFO Running runs: ['k5ih7tuj']
+2024-07-22 17:03:03 INFO Cleaning up finished run: 91jx28kp
+2024-07-22 17:03:03 INFO Cleaning up finished run: ytfc7l5x
+2024-07-22 17:03:03 INFO Cleaning up finished run: ybcvc341
+2024-07-22 17:03:03 INFO Cleaning up finished run: k5ih7tuj
+2024-07-22 17:03:09 INFO Agent received command: run
+2024-07-22 17:03:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:03:09 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:03:09 INFO Agent received command: run
+2024-07-22 17:03:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:03:09 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:03:09 INFO Agent received command: run
+2024-07-22 17:03:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:03:09 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:03:09 INFO Agent received command: run
+2024-07-22 17:03:09 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: gpig
+	test_size: 0.2
+2024-07-22 17:03:09 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=gpig --test_size=0.2
+2024-07-22 17:03:14 INFO Running runs: ['txqs3s4g']
+2024-07-22 17:03:14 INFO Running runs: ['iqw8r255']
+2024-07-22 17:03:14 INFO Running runs: ['6i8agdgr']
+2024-07-22 17:03:14 INFO Running runs: ['g6h7aron']
+2024-07-22 17:04:15 INFO Cleaning up finished run: txqs3s4g
+2024-07-22 17:04:15 INFO Cleaning up finished run: iqw8r255
+2024-07-22 17:04:15 INFO Cleaning up finished run: 6i8agdgr
+2024-07-22 17:04:15 INFO Agent received command: exit
+2024-07-22 17:04:15 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:04:15 INFO Agent received command: exit
+2024-07-22 17:04:15 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:04:15 INFO Cleaning up finished run: g6h7aron
+2024-07-22 17:18:50 INFO Running runs: []
+2024-07-22 17:18:50 INFO Running runs: []
+2024-07-22 17:18:51 INFO Running runs: []
+2024-07-22 17:18:51 INFO Running runs: []
+2024-07-22 17:18:51 INFO Agent received command: run
+2024-07-22 17:18:51 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:18:51 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:18:51 INFO Agent received command: run
+2024-07-22 17:18:51 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:18:51 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:18:51 INFO Agent received command: run
+2024-07-22 17:18:51 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:18:51 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:18:51 INFO Agent received command: run
+2024-07-22 17:18:51 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:18:51 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:18:56 INFO Running runs: ['u2t7pz1c']
+2024-07-22 17:18:56 INFO Running runs: ['p7ioz502']
+2024-07-22 17:18:56 INFO Running runs: ['rf0w735i']
+2024-07-22 17:18:56 INFO Running runs: ['hgrru9c1']
+2024-07-22 17:20:07 INFO Cleaning up finished run: u2t7pz1c
+2024-07-22 17:20:07 INFO Cleaning up finished run: p7ioz502
+2024-07-22 17:20:07 INFO Cleaning up finished run: rf0w735i
+2024-07-22 17:20:07 INFO Cleaning up finished run: hgrru9c1
+2024-07-22 17:20:07 INFO Agent received command: run
+2024-07-22 17:20:07 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:20:07 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:20:08 INFO Agent received command: run
+2024-07-22 17:20:08 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:20:08 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:20:08 INFO Agent received command: run
+2024-07-22 17:20:08 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:20:08 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:20:08 INFO Agent received command: run
+2024-07-22 17:20:08 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:20:08 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:20:12 INFO Running runs: ['q4nlnabi']
+2024-07-22 17:20:13 INFO Running runs: ['aqrveq2d']
+2024-07-22 17:20:13 INFO Running runs: ['tbhop7ir']
+2024-07-22 17:20:13 INFO Running runs: ['q8ypnntf']
+2024-07-22 17:20:13 INFO Cleaning up finished run: q8ypnntf
+2024-07-22 17:20:13 INFO Agent received command: run
+2024-07-22 17:20:13 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:20:13 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:20:18 INFO Cleaning up finished run: q4nlnabi
+2024-07-22 17:20:18 INFO Cleaning up finished run: aqrveq2d
+2024-07-22 17:20:18 INFO Cleaning up finished run: tbhop7ir
+2024-07-22 17:20:18 INFO Agent received command: run
+2024-07-22 17:20:18 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:20:18 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:20:18 INFO Running runs: ['cwlj4z48']
+2024-07-22 17:20:18 INFO Cleaning up finished run: cwlj4z48
+2024-07-22 17:20:23 INFO Running runs: ['q867swe7']
+2024-07-22 17:20:23 INFO Cleaning up finished run: q867swe7
+2024-07-22 17:20:23 INFO Running runs: []
+2024-07-22 17:20:23 INFO Running runs: []
+2024-07-22 17:20:23 INFO Running runs: []
+2024-07-22 17:20:28 INFO Running runs: []
+2024-07-22 17:21:25 INFO Agent received command: exit
+2024-07-22 17:21:25 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:21:25 INFO Agent received command: exit
+2024-07-22 17:21:25 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:21:25 INFO Agent received command: exit
+2024-07-22 17:21:25 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:25:05 INFO Running runs: []
+2024-07-22 17:25:05 INFO Running runs: []
+2024-07-22 17:25:05 INFO Running runs: []
+2024-07-22 17:25:06 INFO Running runs: []
+2024-07-22 17:25:06 INFO Agent received command: run
+2024-07-22 17:25:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:25:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:25:06 INFO Agent received command: run
+2024-07-22 17:25:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:25:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:25:06 INFO Agent received command: run
+2024-07-22 17:25:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:25:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:25:06 INFO Agent received command: run
+2024-07-22 17:25:06 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:25:06 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:25:11 INFO Running runs: ['b5xt49yj']
+2024-07-22 17:25:11 INFO Running runs: ['0sbm7pgi']
+2024-07-22 17:25:11 INFO Running runs: ['bm3jdvtm']
+2024-07-22 17:25:11 INFO Running runs: ['a2ra0o2r']
+2024-07-22 17:27:23 INFO Cleaning up finished run: b5xt49yj
+2024-07-22 17:27:23 INFO Cleaning up finished run: bm3jdvtm
+2024-07-22 17:27:24 INFO Cleaning up finished run: a2ra0o2r
+2024-07-22 17:27:24 INFO Cleaning up finished run: 0sbm7pgi
+2024-07-22 17:27:28 INFO Agent received command: run
+2024-07-22 17:27:28 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:27:28 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:27:28 INFO Agent received command: run
+2024-07-22 17:27:28 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:27:28 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:27:28 INFO Agent received command: run
+2024-07-22 17:27:28 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:27:28 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:27:30 INFO Agent received command: run
+2024-07-22 17:27:30 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:27:30 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:27:33 INFO Running runs: ['hk3qyqmp']
+2024-07-22 17:27:33 INFO Running runs: ['86kw0787']
+2024-07-22 17:27:33 INFO Running runs: ['4o2ugcsw']
+2024-07-22 17:27:35 INFO Running runs: ['io4ngrax']
+2024-07-22 17:28:31 INFO Cleaning up finished run: io4ngrax
+2024-07-22 17:28:31 INFO Agent received command: run
+2024-07-22 17:28:31 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:28:31 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:28:34 INFO Cleaning up finished run: hk3qyqmp
+2024-07-22 17:28:34 INFO Cleaning up finished run: 86kw0787
+2024-07-22 17:28:35 INFO Cleaning up finished run: 4o2ugcsw
+2024-07-22 17:28:35 INFO Agent received command: run
+2024-07-22 17:28:35 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 10
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:28:35 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=10 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:28:36 INFO Running runs: ['ple4dc7a']
+2024-07-22 17:28:40 INFO Running runs: ['70bp82xh']
+2024-07-22 17:28:40 INFO Running runs: []
+2024-07-22 17:28:40 INFO Running runs: []
+2024-07-22 17:28:45 INFO Agent received command: exit
+2024-07-22 17:28:45 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:28:45 INFO Agent received command: exit
+2024-07-22 17:28:45 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:29:32 INFO Cleaning up finished run: ple4dc7a
+2024-07-22 17:29:32 INFO Agent received command: exit
+2024-07-22 17:29:32 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:29:36 INFO Cleaning up finished run: 70bp82xh
+2024-07-22 17:29:36 INFO Agent received command: exit
+2024-07-22 17:29:36 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:38:53 INFO Running runs: []
+2024-07-22 17:38:53 INFO Running runs: []
+2024-07-22 17:38:53 INFO Running runs: []
+2024-07-22 17:38:54 INFO Agent received command: run
+2024-07-22 17:38:54 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:38:54 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:38:54 INFO Agent received command: run
+2024-07-22 17:38:54 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:38:54 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:38:54 INFO Agent received command: run
+2024-07-22 17:38:54 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:38:54 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:38:54 INFO Running runs: []
+2024-07-22 17:38:54 INFO Agent received command: run
+2024-07-22 17:38:54 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:38:54 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:38:59 INFO Running runs: ['ior7kc2h']
+2024-07-22 17:38:59 INFO Running runs: ['fmphpri2']
+2024-07-22 17:38:59 INFO Running runs: ['cawmvvqy']
+2024-07-22 17:38:59 INFO Running runs: ['eyz930qf']
+2024-07-22 17:42:45 INFO Cleaning up finished run: cawmvvqy
+2024-07-22 17:42:50 INFO Cleaning up finished run: fmphpri2
+2024-07-22 17:42:50 INFO Cleaning up finished run: ior7kc2h
+2024-07-22 17:42:50 INFO Cleaning up finished run: eyz930qf
+2024-07-22 17:42:50 INFO Agent received command: run
+2024-07-22 17:42:50 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:42:50 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:42:55 INFO Running runs: ['e3hczpg7']
+2024-07-22 17:42:55 INFO Agent received command: run
+2024-07-22 17:42:55 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:42:55 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:42:56 INFO Agent received command: run
+2024-07-22 17:42:56 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:42:56 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:42:56 INFO Agent received command: run
+2024-07-22 17:42:56 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:42:56 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:43:00 INFO Running runs: ['zu0a2b0h']
+2024-07-22 17:43:01 INFO Running runs: ['yya6thm8']
+2024-07-22 17:43:01 INFO Running runs: ['hkp7xc20']
+2024-07-22 17:45:03 INFO Cleaning up finished run: hkp7xc20
+2024-07-22 17:45:03 INFO Agent received command: run
+2024-07-22 17:45:03 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:45:03 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:45:08 INFO Cleaning up finished run: e3hczpg7
+2024-07-22 17:45:08 INFO Agent received command: run
+2024-07-22 17:45:08 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	smilescol: SMILES
+	task: ['gpig']
+	test_size: 0.2
+2024-07-22 17:45:08 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --smilescol=SMILES --task=['gpig'] --test_size=0.2
+2024-07-22 17:45:08 INFO Running runs: ['bby722u7']
+2024-07-22 17:45:13 INFO Running runs: ['spagiivd']
+2024-07-22 17:45:13 INFO Cleaning up finished run: zu0a2b0h
+2024-07-22 17:45:13 INFO Cleaning up finished run: yya6thm8
+2024-07-22 17:45:18 INFO Running runs: []
+2024-07-22 17:45:18 INFO Running runs: []
+2024-07-22 17:45:18 INFO Agent received command: exit
+2024-07-22 17:45:18 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:45:18 INFO Agent received command: exit
+2024-07-22 17:45:18 INFO Received exit command. Killing runs and quitting.
+2024-07-22 17:47:21 INFO Cleaning up finished run: bby722u7
+2024-07-22 17:47:21 INFO Agent received command: exit
+2024-07-22 17:47:21 INFO Received exit command. Killing runs and quitting.
+2024-07-22 19:41:43 INFO Running runs: []
+2024-07-22 19:41:43 INFO Running runs: []
+2024-07-22 19:41:43 INFO Running runs: []
+2024-07-22 19:41:43 INFO Running runs: []
+2024-07-22 19:41:43 INFO Agent received command: run
+2024-07-22 19:41:43 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 19:41:43 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 19:41:43 INFO Agent received command: run
+2024-07-22 19:41:43 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 19:41:43 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 19:41:43 INFO Agent received command: run
+2024-07-22 19:41:43 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 19:41:43 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 19:41:43 INFO Agent received command: run
+2024-07-22 19:41:43 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 19:41:43 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 19:41:48 INFO Running runs: ['pmj96v9a']
+2024-07-22 19:41:48 INFO Running runs: ['hb76yerh']
+2024-07-22 19:41:48 INFO Running runs: ['xg0vdxs3']
+2024-07-22 19:41:48 INFO Running runs: ['tknsbcqe']
+2024-07-22 20:30:24 INFO Cleaning up finished run: hb76yerh
+2024-07-22 20:30:30 INFO Agent received command: run
+2024-07-22 20:30:30 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 4
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 20:30:30 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=4 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 20:30:35 INFO Running runs: ['oc3st2el']
+2024-07-22 20:31:35 INFO Cleaning up finished run: tknsbcqe
+2024-07-22 20:31:40 INFO Agent received command: run
+2024-07-22 20:31:40 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 5
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 20:31:40 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=5 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 20:31:45 INFO Running runs: ['nye312en']
+2024-07-22 20:36:04 INFO Cleaning up finished run: pmj96v9a
+2024-07-22 20:36:08 INFO Agent received command: run
+2024-07-22 20:36:08 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 6
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 20:36:08 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=6 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 20:36:13 INFO Running runs: ['7e1644w5']
+2024-07-22 20:37:04 ERROR 502 response executing GraphQL.
+2024-07-22 20:37:04 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2024-07-22 20:37:30 INFO Cleaning up finished run: xg0vdxs3
+2024-07-22 20:37:36 INFO Agent received command: run
+2024-07-22 20:37:36 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 7
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 20:37:36 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=7 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 20:37:41 INFO Running runs: ['pvbx5cn3']
+2024-07-22 21:16:19 INFO Cleaning up finished run: oc3st2el
+2024-07-22 21:16:19 INFO Agent received command: run
+2024-07-22 21:16:19 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 21:16:19 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 21:16:24 INFO Running runs: ['o2j73lcc']
+2024-07-22 21:20:20 INFO Cleaning up finished run: nye312en
+2024-07-22 21:20:20 INFO Agent received command: run
+2024-07-22 21:20:20 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 21:20:20 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 21:20:25 INFO Running runs: ['gisroadr']
+2024-07-22 21:29:26 INFO Cleaning up finished run: 7e1644w5
+2024-07-22 21:29:26 INFO Agent received command: exit
+2024-07-22 21:29:26 INFO Received exit command. Killing runs and quitting.
+2024-07-22 21:32:35 INFO Cleaning up finished run: pvbx5cn3
+2024-07-22 21:32:36 INFO Agent received command: exit
+2024-07-22 21:32:36 INFO Received exit command. Killing runs and quitting.
+2024-07-22 21:57:47 INFO Running runs: []
+2024-07-22 21:57:47 INFO Running runs: []
+2024-07-22 21:57:47 INFO Agent received command: run
+2024-07-22 21:57:47 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 8
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 21:57:47 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=8 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 21:57:47 INFO Agent received command: run
+2024-07-22 21:57:47 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 32
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 9
+	smilescol: SMILES
+	task: ['mouse']
+	test_size: 0.2
+2024-07-22 21:57:47 INFO About to run command: /usr/bin/env python run_script_lv_multi_sweep2.py --emb_size=256 --epochs=32 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=9 --smilescol=SMILES --task=['mouse'] --test_size=0.2
+2024-07-22 21:57:52 INFO Running runs: ['opzcbn8a']
+2024-07-22 21:57:52 INFO Running runs: ['iidzzgzd']
+2024-07-22 22:46:28 INFO Cleaning up finished run: iidzzgzd
+2024-07-22 22:46:33 INFO Cleaning up finished run: opzcbn8a
+2024-07-22 22:46:34 INFO Agent received command: exit
+2024-07-22 22:46:34 INFO Received exit command. Killing runs and quitting.
+2024-07-22 22:46:39 INFO Agent received command: exit
+2024-07-22 22:46:39 INFO Received exit command. Killing runs and quitting.
+2024-07-22 23:06:02 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+2024-07-22 23:06:02 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+2024-07-22 23:06:02 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+2024-07-22 23:06:02 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 231, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 117, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 735, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/3fkewbhl not found
+
+2024-07-22 23:09:59 ERROR 400 response executing GraphQL.
+2024-07-22 23:09:59 ERROR 400 response executing GraphQL.
+2024-07-22 23:09:59 ERROR {"errors":[{"message":"Sweep lvairusorg/Multitask_Class_Oral/ux84l10i is not running","path":["createAgent"]}],"data":{"createAgent":null}}
+2024-07-22 23:09:59 ERROR {"errors":[{"message":"Sweep lvairusorg/Multitask_Class_Oral/ux84l10i is not running","path":["createAgent"]}],"data":{"createAgent":null}}
+2024-07-22 23:09:59 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2069, in register_agent
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 147, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+                                ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/util.py", line 1006, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.UsageError: Sweep lvairusorg/Multitask_Class_Oral/ux84l10i is not running
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 242, in run
+    agent = self._api.register_agent(socket.gethostname(), sweep_id=self._sweep_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in register_agent
+    return self.api.register_agent(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2069, in register_agent
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 147, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+                                ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/util.py", line 1006, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/ux84l10i is not running
+
+2024-07-22 23:09:59 ERROR Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2069, in register_agent
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 147, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+                                ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/util.py", line 1006, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.UsageError: Sweep lvairusorg/Multitask_Class_Oral/ux84l10i is not running
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/cli/cli.py", line 1411, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+           ^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 586, in run_agent
+    agent.run()
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/wandb_agent.py", line 242, in run
+    agent = self._api.register_agent(socket.gethostname(), sweep_id=self._sweep_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/internal.py", line 141, in register_agent
+    return self.api.register_agent(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2069, in register_agent
+    response = self.gql(
+               ^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 147, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+                                ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/wandb/util.py", line 1006, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.CommError: Sweep lvairusorg/Multitask_Class_Oral/ux84l10i is not running
+
+2024-07-22 23:10:34 INFO Running runs: []
+2024-07-22 23:10:34 INFO Running runs: []
+2024-07-22 23:10:34 INFO Running runs: []
+2024-07-22 23:10:34 INFO Running runs: []
+2024-07-22 23:10:34 INFO Agent received command: run
+2024-07-22 23:10:34 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-22 23:10:34 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-22 23:10:34 INFO Agent received command: run
+2024-07-22 23:10:34 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-22 23:10:34 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-22 23:10:34 INFO Agent received command: run
+2024-07-22 23:10:34 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-22 23:10:34 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-22 23:10:34 INFO Agent received command: run
+2024-07-22 23:10:34 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-22 23:10:34 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-22 23:10:39 INFO Running runs: ['e2fqc74l']
+2024-07-22 23:10:39 INFO Running runs: ['5j9hfl6q']
+2024-07-22 23:10:39 INFO Running runs: ['tf38v6fe']
+2024-07-22 23:10:39 INFO Running runs: ['inbqp5zn']
+2024-07-22 23:12:31 INFO Cleaning up finished run: e2fqc74l
+2024-07-22 23:12:31 INFO Cleaning up finished run: 5j9hfl6q
+2024-07-22 23:12:31 INFO Cleaning up finished run: tf38v6fe
+2024-07-22 23:12:31 INFO Cleaning up finished run: inbqp5zn
+2024-07-22 23:12:36 INFO Running runs: []
+2024-07-22 23:12:36 INFO Running runs: []
+2024-07-22 23:12:37 INFO Running runs: []
+2024-07-22 23:12:37 INFO Running runs: []
+2024-07-22 23:16:47 ERROR 502 response executing GraphQL.
+2024-07-22 23:16:47 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2024-07-22 23:19:26 ERROR 502 response executing GraphQL.
+2024-07-22 23:19:26 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2024-07-22 23:19:48 ERROR 502 response executing GraphQL.
+2024-07-22 23:19:48 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2024-07-22 23:22:11 ERROR 502 response executing GraphQL.
+2024-07-22 23:22:11 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2024-07-22 23:23:23 ERROR 502 response executing GraphQL.
+2024-07-22 23:23:23 ERROR 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2024-07-22 23:41:36 INFO Running runs: []
+2024-07-22 23:41:36 INFO Running runs: []
+2024-07-22 23:41:36 INFO Running runs: []
+2024-07-22 23:41:36 INFO Running runs: []
+2024-07-22 23:45:38 INFO Running runs: []
+2024-07-22 23:45:38 INFO Running runs: []
+2024-07-22 23:45:38 INFO Running runs: []
+2024-07-22 23:45:38 INFO Running runs: []
+2024-07-23 14:35:21 INFO Running runs: []
+2024-07-23 14:35:21 INFO Running runs: []
+2024-07-23 14:35:21 INFO Running runs: []
+2024-07-23 14:35:21 INFO Running runs: []
+2024-07-23 14:35:21 INFO Agent received command: run
+2024-07-23 14:35:21 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 0
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-23 14:35:21 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=0 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-23 14:35:21 INFO Agent received command: run
+2024-07-23 14:35:21 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 1
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-23 14:35:21 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=1 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-23 14:35:21 INFO Agent received command: run
+2024-07-23 14:35:21 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 2
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-23 14:35:21 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=2 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-23 14:35:21 INFO Agent received command: run
+2024-07-23 14:35:21 INFO Agent starting run with config:
+	emb_size: 256
+	epochs: 3
+	hidden_size: 256
+	input_size: 768
+	labelcol: EPACategoryIndex
+	layertype: OrthoLinear
+	lr: 0.0001
+	output_size: 5
+	seed_idx: 3
+	smilescol: SMILES
+	task: ['all except human']
+	test_size: 0.2
+2024-07-23 14:35:21 INFO About to run command: /usr/bin/env python run_script_lv_multi.py --emb_size=256 --epochs=3 --hidden_size=256 --input_size=768 --labelcol=EPACategoryIndex --layertype=OrthoLinear --lr=0.0001 --output_size=5 --seed_idx=3 --smilescol=SMILES "--task=['all except human']" --test_size=0.2
+2024-07-23 14:35:26 INFO Running runs: ['e2fqc74l']
+2024-07-23 14:35:26 INFO Running runs: ['5j9hfl6q']
+2024-07-23 14:35:26 INFO Running runs: ['tf38v6fe']
+2024-07-23 14:35:26 INFO Running runs: ['inbqp5zn']
+2024-07-23 14:44:52 INFO Cleaning up finished run: 5j9hfl6q
+2024-07-23 14:44:52 INFO Cleaning up finished run: inbqp5zn
+2024-07-23 14:44:52 INFO Cleaning up finished run: e2fqc74l
+2024-07-23 14:44:52 INFO Cleaning up finished run: tf38v6fe
+2024-07-23 14:44:58 INFO Agent received command: exit
+2024-07-23 14:44:58 INFO Received exit command. Killing runs and quitting.
+2024-07-23 14:44:58 INFO Agent received command: exit
+2024-07-23 14:44:58 INFO Received exit command. Killing runs and quitting.

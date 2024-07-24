@@ -1,0 +1,32 @@
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:173: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  "best own ep", "best own ep tloss", "best own ep vloss", "best own ep AUC", ]).fillna(0).infer_objects(copy=False)
+  0%|                                                                                                                                                                            | 0/10 [00:00<?, ?it/s]/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:300: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '1.5974149703979492' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc[taskname, "best own ep tloss"] = train_avg_losses[task_id].item()
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:301: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '1.5688414573669434' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc[taskname, "best own ep vloss"] = val_avg_losses[task_id].item()
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:302: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '0.6927361296111296' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc[taskname, "best own ep AUC"] = aucs[task_id].item()
+  0%|                                                                                                                                                                            | 0/10 [00:23<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 323, in <module>
+    performance_df.loc["best avg ep tloss"] = train_avg_losses + [train_epoch_total_loss]
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/indexing.py", line 911, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/indexing.py", line 1932, in _setitem_with_indexer
+    self._setitem_with_indexer_missing(indexer, value)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/indexing.py", line 2306, in _setitem_with_indexer_missing
+    raise ValueError("cannot set a row with mismatched columns")
+ValueError: cannot set a row with mismatched columns

@@ -1,0 +1,40 @@
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:173: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC", ]).fillna(0.0).infer_objects(copy=False)
+  0%|                                                                                                                                                                            | 0/10 [00:24<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 327, in <module>
+    performance_df["best_avg_ep_tloss"] = train_avg_losses + [train_epoch_total_loss]
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 4311, in __setitem__
+    self._set_item(key, value)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 4524, in _set_item
+    value, refs = self._sanitize_column(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 5267, in _sanitize_column
+    arr = sanitize_array(value, self.index, copy=True, allow_2d=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/construction.py", line 654, in sanitize_array
+    subarr = maybe_convert_platform(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/dtypes/cast.py", line 131, in maybe_convert_platform
+    arr = construct_1d_object_array_from_listlike(values)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/dtypes/cast.py", line 1601, in construct_1d_object_array_from_listlike
+    result[:] = values
+    ~~~~~~^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/_tensor.py", line 1089, in __array__
+    return self.numpy().astype(dtype, copy=False)
+           ^^^^^^^^^^^^
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.

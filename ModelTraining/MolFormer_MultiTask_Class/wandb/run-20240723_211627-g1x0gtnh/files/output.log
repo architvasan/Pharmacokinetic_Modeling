@@ -1,0 +1,36 @@
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:173: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  "best own ep", "best own ep tloss", "best own ep vloss", "best own ep AUC", ]).fillna(0).infer_objects(copy=False)
+  0%|                                                                                                                                                                            | 0/10 [00:00<?, ?it/s]/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:300: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '1.5974149703979492' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc[taskname, "best own ep tloss"] = float(train_avg_losses[task_id])
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:301: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '1.5688414573669434' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc[taskname, "best own ep vloss"] = float(val_avg_losses[task_id])
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:302: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '0.6927361296111296' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc[taskname, "best own ep AUC"] = float(aucs[task_id])
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:313: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '17.57326889038086' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc["total", "best avg ep tloss"] = float(train_epoch_total_loss.item())
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:314: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '22.09617805480957' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc["total", "best avg ep vloss"] = float(val_total_loss.item())
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:315: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '0.5252230916651596' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  performance_df.loc["total", "best avg ep AUC"] = float(auc_avg.item())
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [03:47<00:00, 22.74s/it]

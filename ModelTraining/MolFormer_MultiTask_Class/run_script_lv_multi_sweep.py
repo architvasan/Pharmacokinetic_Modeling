@@ -47,32 +47,44 @@ def calc_auc(grnd_truth, predictions):
 # parse arguments
 parser = ArgumentParser()#add_help=False)
 parser.add_argument(
-    "-d", "--dataset", type=Path, required=True, help="Input data for training/validation"
+    "-d", "--dataset", type=Path, required=False, help="Input data for training/validation"
 )
 parser.add_argument(
-    "-s", "--smilescol", type=str, required=True, help="Column for SMILES"
+    "-s", "--smilescol", type=str, required=False, help="Column for SMILES"
 )
 parser.add_argument(
-    "-l", "--labelcol", type=str, required=True, help="Column for labels"
+    "-l", "--labelcol", type=str, required=False, help="Column for labels"
 )
 parser.add_argument(
-    "-t", "--testprop", type=float, required=True, help="Proportion of data used for training"
+    "-t", "--testprop", type=float, required=False, help="Proportion of data used for training"
 )
 parser.add_argument(
-    "-E", "--epochs", type=int, required=True, help="Number of epochs"
+    "-E", "--epochs", type=int, required=False, help="Number of epochs"
 )
 
 args = parser.parse_args()
+# args, unknown_args = parser.parse_known_args()
+
+if True:
+    args.dataset = Path("gpig")
+    args.smilescol = "SMILES"
+    args.labelcol = "EPACategoryIndex"
+    args.testprop = 0.2
+    args.epochs = 10
+
 
 # hyperparameters
-task_name_list = ['bird', 'cat', 'mouse', 'rat' ]#'chicken', 'dog', 'duck', 'gpig', 'human', 'mammal', 'man', 'mouse', 'quail', 'rabbit', 'rat', 'woman']
-task_name_list_list = [[task] for task in task_name_list]
+# task_name_list = ['bird', 'cat', 'chicken', 'dog', 'duck', 'gpig', 'human', 'mammal', 'man', 'mouse', 'quail', 'rabbit', 'rat', 'woman']
+task_name_list = ['bird', 'cat', 'chicken', 'dog', 'duck', 'gpig', 'mammal', 'man', 'quail', 'rabbit', 'woman']
+
+# PROJECT = 'Multitask Class Oral Test'
+PROJECT = "Multitask_Class_Oral"
 
 sweep_config = {
     'method': 'grid',
     'metric': {'name': 'val avg auc', 'goal':'maximize'},
-    'parameters': { 'seed_idx': {'values': list(range(2))},
-                    'tasks': {'value': 'bird'},
+    'parameters': { 'seed_idx': {'values': list(range(8))},
+                    'task': {'value': args.dataset},
                     'input_size': {'value': 768},
                     'emb_size': {'value': 256},
                     'hidden_size': {'value': 256},
@@ -81,10 +93,12 @@ sweep_config = {
                     'test_size': {'value': args.testprop},
                     'epochs': {'value': args.epochs},
                     'layertype': {'value': 'OrthoLinear'},
+                    'smilescol': {'value': args.smilescol},
+                    'labelcol': {'value': args.labelcol},
                     }
 }
 
-sweep_id = wandb.sweep(sweep_config, project="Multitask Class Oral Test")
+# sweep_id = wandb.sweep(sweep_config, project=PROJECT)
 
 with open("sweep_id.txt", 'w') as file:
     file.write(sweep_id)
@@ -92,8 +106,9 @@ with open("sweep_id.txt", 'w') as file:
 def train_model(config=None):
 
     # init wandb to log results
-    wandb.init( project = "Multitask Class Oral Test",
+    wandb.init( project = PROJECT,
                 group = "stask",
+                notes = "parallel try",
                 config = config,
     )
     config = wandb.config
@@ -137,9 +152,9 @@ def train_model(config=None):
     # took out human data bc it gives errors
 
     len_smallest_dataset = 121
-    len_smallest_testset = math.ceil(len_smallest_dataset*args.testprop)
+    len_smallest_testset = math.ceil(len_smallest_dataset*config.test_size)
     len_smallest_trainset = len_smallest_dataset - len_smallest_testset
-    directory = Path(f'single_data/{config.tasks}')
+    directory = Path(f'single_data/{config.task[0]}')
     num_tasks = len(list(directory.iterdir()))
     tasks = [None] * num_tasks
 
@@ -155,11 +170,11 @@ def train_model(config=None):
         # X_train, X_test = sklearn.model_selection.train_test_split(data[args.smilescol], test_size=args.testprop, stratify=data[args.labelcol], random_state=42)
         # Y_train, Y_test = sklearn.model_selection.train_test_split(data[args.labelcol], test_size=args.testprop, stratify=data[args.labelcol], random_state=42)
         X_train, X_test, Y_train, Y_test = sklearn.model_selection.train_test_split(
-            data[args.smilescol],
-            data[args.labelcol],
-            test_size=args.testprop,
+            data[config.smilescol],
+            data[config.labelcol],
+            test_size=config.test_size,
             shuffle=True,
-            stratify=data[args.labelcol],
+            stratify=data[config.labelcol],
             random_state=SEED
         )
 
@@ -194,7 +209,7 @@ def train_model(config=None):
     # ========================================================================================================================
 
     # Initialize optimizer
-    optimizer = torch.optim.Adam(nnmodel.parameters(), lr=config['lr'])
+    optimizer = torch.optim.Adam(nnmodel.parameters(), lr=config.lr)
     # Timestamp
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
@@ -212,10 +227,10 @@ def train_model(config=None):
     #         print(f"batch num: {i}")
 
 
-    for epoch in tqdm(range(args.epochs)):
+    for epoch in tqdm(range(config.epochs)):
+        wandb.log({'epoch': epoch})
         # training
         # loop through batches (ith minibatch of every task)
-        wandb.log({'epoch': epoch})
         if True:
             train_running_losses = [0] * num_tasks
             # zip train_dataloaders of all tasks to iterate through them in parallel

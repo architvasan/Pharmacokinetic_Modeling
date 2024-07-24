@@ -1,0 +1,33 @@
+NUM TASKS: 11
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+TASKNAMES: ['CAT', 'GPIG', 'QUAIL', 'DUCK', 'MAMMAL', 'CHICKEN', 'DOG', 'WOMAN', 'RABBIT', 'MAN', 'BIRD']
+  0%|                                                                                                                                                                            | 0/10 [00:00<?, ?it/s]
+train_avg_losses: [tensor(1.5974, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.6055, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.6009, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.6010, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.5916, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.6070, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.5867, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.5750, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.6013, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.6073, device='cuda:0', grad_fn=<DivBackward0>), tensor(1.5995, device='cuda:0', grad_fn=<DivBackward0>)]
+TASKID: 0
+TASKID: 1
+TASKID: 2
+TASKID: 3
+TASKID: 4
+TASKID: 5
+TASKID: 6
+TASKID: 7
+TASKID: 8
+  0%|                                                                                                                                                                            | 0/10 [00:19<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 242, in <module>
+    wandb.log({f'train {taskname} loss': train_avg_losses[task_id]})
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^
+IndexError: list index out of range
+TASKID: 10
+TASKID: 11

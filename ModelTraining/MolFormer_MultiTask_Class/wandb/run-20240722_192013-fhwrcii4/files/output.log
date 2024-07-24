@@ -1,0 +1,91 @@
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+mouse
+dog
+woman
+rabbit
+man
+rat
+bird
+  0%|                                                                                                                                                                            | 0/50 [00:00<?, ?it/s]
+AUC: 0.6484382284382284
+AUC: 0.5482968406081472
+AUC: 0.5024019167038886
+AUC: 0.4596208007531758
+AUC: 0.5525326798105935
+AUC: 0.5185244878578212
+AUC: 0.580545345990292
+AUC: 0.47891108659357934
+AUC: 0.5516949620427882
+AUC: 0.4626387816755481
+AUC: 0.6079267676767677
+AUC: 0.5578550562404534
+
+  2%|███▏                                                                                                                                                             | 1/50 [02:29<2:02:29, 149.99s/it]
+AUC: 0.6488491138491137
+AUC: 0.5596815416630441
+AUC: 0.5848119831044598
+AUC: 0.6558327024417508
+AUC: 0.5672609158504404
+AUC: 0.5254555334204456
+AUC: 0.6317026413450542
+AUC: 0.5135032681514428
+AUC: 0.6834223602484472
+AUC: 0.511721379058488
+AUC: 0.6296847643097643
+AUC: 0.5867942059361628
+
+  4%|██████▍                                                                                                                                                          | 2/50 [04:58<1:59:03, 148.83s/it]
+AUC: 0.6663771413771414
+AUC: 0.5337601008885133
+AUC: 0.6373875510458844
+AUC: 0.6737928781980285
+AUC: 0.5726207233650416
+  4%|██████▍                                                                                                                                                          | 2/50 [07:04<2:49:53, 212.36s/it]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 274, in <module>
+    for minibatch in dataloader:
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/data_utils.py", line 22, in __getitem__
+    inputs = self.tokenizer(data, max_length=self.max_input_length, padding="max_length", truncation=True, return_tensors="pt")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2945, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3053, in _call_one
+    return self.encode_plus(
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3127, in encode_plus
+    return self._encode_plus(
+           ^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 601, in _encode_plus
+    batched_output = self._batch_encode_plus(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 576, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 227, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 762, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 724, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,32 @@
+2024-07-23 20:37:44,411 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Configure stats pid to 2167707
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Loading settings from /home/lvairusanl/.config/wandb/settings
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Loading settings from /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/settings
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py', 'program_abspath': '/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py', 'program': '/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py'}
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_init.py:_log_setup():521] Logging user logs to /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240723_203744-d0zw8ysq/logs/debug.log
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_init.py:_log_setup():522] Logging internal logs to /lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/wandb/run-20240723_203744-d0zw8ysq/logs/debug-internal.log
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_init.py:init():561] calling init triggers
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'init_project': 'Multitask Class Oral Test', 'init_group': 'mtask', 'init_notes': 'test multi df', 'dataset': 'oral_data_small', 'task': ['no hum, mou, rat'], 'seed_idx': 0, 'epochs': 10, 'lr': 0.0001, 'testprop': 0.2, 'input_size': 768, 'emb_size': 256, 'hidden_size': 256, 'output_size': 5, 'layertype': 'OrthoLinear', 'smilescol': 'SMILES', 'labelcol': 'EPACategoryIndex'}
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_init.py:init():611] starting backend
+2024-07-23 20:37:44,412 INFO    MainThread:2167707 [wandb_init.py:init():615] setting up manager
+2024-07-23 20:37:44,415 INFO    MainThread:2167707 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-07-23 20:37:44,418 INFO    MainThread:2167707 [wandb_init.py:init():623] backend started and connected
+2024-07-23 20:37:44,420 INFO    MainThread:2167707 [wandb_init.py:init():715] updated telemetry
+2024-07-23 20:37:44,427 INFO    MainThread:2167707 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-07-23 20:37:44,617 INFO    MainThread:2167707 [wandb_run.py:_on_init():2357] communicating current version
+2024-07-23 20:37:44,682 INFO    MainThread:2167707 [wandb_run.py:_on_init():2366] got version response upgrade_message: "wandb version 0.17.5 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-07-23 20:37:44,683 INFO    MainThread:2167707 [wandb_init.py:init():799] starting run threads in backend
+2024-07-23 20:37:55,126 INFO    MainThread:2167707 [wandb_run.py:_console_start():2335] atexit reg
+2024-07-23 20:37:55,126 INFO    MainThread:2167707 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2024-07-23 20:37:55,126 INFO    MainThread:2167707 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2024-07-23 20:37:55,126 INFO    MainThread:2167707 [wandb_run.py:_redirect():2280] Redirects installed.
+2024-07-23 20:37:55,132 INFO    MainThread:2167707 [wandb_init.py:init():842] run started, returning control to user process
+2024-07-23 20:38:00,881 INFO    MainThread:2167707 [wandb_watch.py:watch():51] Watching
+2024-07-23 20:41:10,833 INFO    MainThread:2167707 [wandb_run.py:_config_callback():1347] config_cb ('_wandb', 'visualize', 'avg_auc_bar') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/bar/v0', 'fieldSettings': {'label': 'task', 'value': 'best avg ep AUC'}, 'stringSettings': {'title': 'best avg ep AUC'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'avg_auc_bar_table'}], 'fields': []}]}]}}} None
+2024-07-23 20:41:11,169 INFO    MainThread:2167707 [wandb_run.py:_config_callback():1347] config_cb ('_wandb', 'visualize', 'own_auc_bar') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/bar/v0', 'fieldSettings': {'label': 'task', 'value': 'best own ep AUC'}, 'stringSettings': {'title': 'best own ep AUC'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'own_auc_bar_table'}], 'fields': []}]}]}}} None
+2024-07-23 20:41:16,470 WARNING MsgRouterThr:2167707 [router.py:message_loop():77] message_loop has been closed

@@ -1,0 +1,21 @@
+NUM TASKS: 11
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+TASKNAMES: ['CAT', 'GPIG', 'QUAIL', 'DUCK', 'MAMMAL', 'CHICKEN', 'DOG', 'WOMAN', 'RABBIT', 'MAN', 'BIRD']
+  0%|                                                                                                                                                                            | 0/10 [00:00<?, ?it/s]
+  0%|                                                                                                                                                                            | 0/10 [00:20<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 241, in <module>
+    wandb.log({f'train {taskname} loss': train_avg_losses[task_id]})
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^
+IndexError: list index out of range

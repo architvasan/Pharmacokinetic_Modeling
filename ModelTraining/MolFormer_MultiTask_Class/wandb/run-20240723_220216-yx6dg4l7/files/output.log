@@ -1,0 +1,20 @@
+filenames:
+cat
+gpig
+quail
+duck
+mammal
+chicken
+dog
+woman
+rabbit
+man
+bird
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py:173: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC", ]).fillna(0.0).infer_objects(copy=False)
+  0%|                                                                                                                                                                            | 0/10 [00:23<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 327, in <module>
+    performance_df["best_avg_ep_tloss"] = train_avg_losses.cpu().numpy() + [train_epoch_total_loss]
+                                          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'cpu'
