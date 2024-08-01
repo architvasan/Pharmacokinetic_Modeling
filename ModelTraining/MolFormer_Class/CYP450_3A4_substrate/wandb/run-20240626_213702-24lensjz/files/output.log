@@ -1,0 +1,10 @@
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/data_utils.py:28: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  "y_regression_values": torch.tensor(self.y_regression_values[idx]).to(self.device),
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/run_script.py", line 257, in <module>
+    outputs_dict = inference_test_set(epoch, criterion)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/run_script.py", line 220, in inference_test_set
+    np.save('tsne_embs.npy', encoder_outputs)
+                             ^^^^^^^^^^^^^^^
+NameError: name 'encoder_outputs' is not defined

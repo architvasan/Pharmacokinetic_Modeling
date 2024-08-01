@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/run_script.py", line 277, in <module>
+    ep_auc = calc_auc(outputs_dict["ground_truth"], outputs_dict["predictions"]) #sklearn.metrics.r2_score(outputs_dict["ground_truth"], outputs_dict["predictions"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_Class/CYP450_3A4_substrate/run_script.py", line 35, in calc_auc
+    auc_scores.to_csv("auc_scores.csv")
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_csv'

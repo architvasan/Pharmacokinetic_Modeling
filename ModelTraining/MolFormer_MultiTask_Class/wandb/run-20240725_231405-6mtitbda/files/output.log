@@ -1,0 +1,13 @@
+filenames:
+mouse
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_mouse_bi.py:178: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  performance_df = performance_df.fillna(0.0)
+  0%|                                                                                                                                                                               | 0/10 [01:27<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_mouse_bi.py", line 282, in <module>
+    auc = calc_auc(val_labels[task_id], val_preds[task_id])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_mouse_bi.py", line 36, in calc_auc
+    for i in range(grnd_truth.shape[1]):
+                   ~~~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range

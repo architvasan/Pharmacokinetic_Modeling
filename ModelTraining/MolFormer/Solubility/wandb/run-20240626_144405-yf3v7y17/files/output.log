@@ -1,0 +1,76 @@
+embeddings MolformerEmbeddings(
+  (word_embeddings): Embedding(2362, 768, padding_idx=2)
+  (dropout): Dropout(p=0.2, inplace=False)
+)
+encoder MolformerEncoder(
+  (layer): ModuleList(
+    (0-11): 12 x MolformerLayer(
+      (attention): MolformerAttention(
+        (self): MolformerSelfAttention(
+          (query): Linear(in_features=768, out_features=768, bias=True)
+          (key): Linear(in_features=768, out_features=768, bias=True)
+          (value): Linear(in_features=768, out_features=768, bias=True)
+          (rotary_embeddings): MolformerRotaryEmbedding()
+          (feature_map): MolformerFeatureMap(
+            (kernel): ReLU()
+          )
+        )
+        (output): MolformerSelfOutput(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (intermediate): MolformerIntermediate(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (intermediate_act_fn): GELUActivation()
+      )
+      (output): MolformerOutput(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+)
+LayerNorm LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            TAID               Name                                         IUPAC Name  PubChem CID  ... Toxicity Value      logTV  Toxicity Category  TVCategoryIndex
+0      TOX-17760  Ciguatoxin CTX-1B  16-(3,4-dihydroxybut-1-enyl)-43,44,49,54,58-pe...     73656912  ...        0.00025  -8.294078                0-5                0
+1      TOX-70976                NaN  16-(3,4-dihydroxybut-1-enyl)-43,44,49,54,58-pe...     78410149  ...        0.00100  -6.907782                0-5                0
+2      TOX-25170      BATRACHOTOXIN  1-(9,12-dihydroxy-6,16-dimethyl-10,19-dioxa-16...     12300006  ...        0.00200  -6.214580                0-5                0
+3      TOX-47677                NaN  5-hydroxy-2-[5-hydroxy-4-methoxy-2-(3-methyl-7...        73240  ...        0.00690  -4.976251                0-5                0
+4      TOX-30700                NaN  (2,6-diamino-10,10-dihydroxy-3a,4,8,9-tetrahyd...        37173  ...        0.00800  -4.828317                0-5                0
+...          ...                ...                                                ...          ...  ...            ...        ...                ...              ...
+35294   TOX-1717                NaN                                    naphthalen-2-ol         8663  ...    97497.97114  11.487587        5000-500000                6
+35295   TOX-5381                NaN                     bis(2-ethylhexyl) hexanedioate         7641  ...   100007.01620  11.512996        5000-500000                6
+35296   TOX-4167      chloroxylenol                        4-chloro-3,5-dimethylphenol         2723  ...   114998.53150  11.652675        5000-500000                6
+35297  TOX-44574                NaN  3-[4-(trifluoromethyl)phenyl]-4,6,7,8,9,9a-hex...      3050313  ...   157995.80490  11.970324        5000-500000                6
+35298  TOX-69820                NaN  N-[[4-[2-(2-chlorophenyl)-4-oxoquinazolin-3-yl...      3076925  ...   463962.21600  13.047558        5000-500000                6
+[35299 rows x 10 columns]
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer/Solubility/data_utils.py:28: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  "y_regression_values": torch.tensor(self.y_regression_values[idx]).to(self.device),
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer/Solubility/run_script_lv.py", line 215, in <module>
+    train_one_epoch(epoch)
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer/Solubility/run_script_lv.py", line 125, in train_one_epoch
+    nn_outputs = nnmodel(encoder)
+                 ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer/Solubility/regression_layer.py", line 64, in forward
+    output: torch.tensor = self.output(embeds)
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (128x1 and 512x1)

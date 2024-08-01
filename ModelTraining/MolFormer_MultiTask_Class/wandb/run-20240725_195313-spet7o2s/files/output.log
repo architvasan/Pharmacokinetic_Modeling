@@ -1,0 +1,19 @@
+filenames:
+woman
+man
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_humval_bi.py:197: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  performance_df = performance_df.fillna(0.0)
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_humval_bi.py", line 201, in <module>
+    performance_df["task"] = tasknames + ["total"]
+    ~~~~~~~~~~~~~~^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 4311, in __setitem__
+    self._set_item(key, value)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 4524, in _set_item
+    value, refs = self._sanitize_column(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/frame.py", line 5266, in _sanitize_column
+    com.require_length_match(value, self.index)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/pandas/core/common.py", line 573, in require_length_match
+    raise ValueError(
+ValueError: Length of values (4) does not match length of index (3)

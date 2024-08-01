@@ -1,0 +1,16 @@
+filenames:
+bird
+  0%|          | 0/10 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_multi.py", line 344, in <module>
+    cm = confusion_matrix(y_true_test, y_pred_test)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/sklearn/metrics/_classification.py", line 319, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/sklearn/metrics/_classification.py", line 105, in _check_targets
+    raise ValueError("{0} is not supported".format(y_type))
+ValueError: multiclass-multioutput is not supported

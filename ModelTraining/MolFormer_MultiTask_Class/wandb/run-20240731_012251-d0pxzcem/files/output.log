@@ -1,0 +1,10 @@
+filenames:
+mouse
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_b_mouse.py", line 137, in <module>
+    Y_train = torch.tensor(Y_train.tolist(), dtype=torch.float)
+                           ^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/envs/sst/lib/python3.11/site-packages/pandas/core/generic.py", line 5902, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'tolist'

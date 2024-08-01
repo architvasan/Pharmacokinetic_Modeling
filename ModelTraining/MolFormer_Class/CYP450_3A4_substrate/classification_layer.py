@@ -32,16 +32,24 @@ class NNModel(nn.Module):
             OrthoLinear(config["embedding_size"], config["hidden_size"]),
             nn.ReLU(),
         )
-        self.linearlayers: nn.ModuleList = nn.ModuleList(
-            [
-                nn.Sequential(
-                    OrthoLinear(config["hidden_size"], config["hidden_size"]), nn.ReLU()
-                )
-                for _ in range(config["n_layers"])
-            ]
-        )
+        # self.linearlayers: nn.ModuleList = nn.ModuleList(
+        #     [
+        #         nn.Sequential(
+        #             OrthoLinear(config["hidden_size"], config["hidden_size"]), nn.ReLU()
+        #         )
+        #         for _ in range(config["n_layers"])
+        #     ]
+        # )
+        # self.output: nn.Linear = nn.Linear(config["hidden_size"], config["output_size"])
 
-        self.output: nn.Linear = nn.Linear(config["hidden_size"], config["output_size"])
+        self.linearlayers: nn.ModuleList = nn.ModuleList([
+            nn.Sequential(OrthoLinear(config["hidden_size"], 128), nn.ReLU()),
+            # nn.Sequential(OrthoLinear(256, 128), nn.ReLU()),
+            nn.Sequential(OrthoLinear(128,64), nn.ReLU()),
+            nn.Sequential(OrthoLinear(64, 16), nn.ReLU()),
+        ])
+        self.output: nn.Linear = nn.Linear(16, config["output_size"])
+        
 
     def forward(self, x: torch.tensor):
         """

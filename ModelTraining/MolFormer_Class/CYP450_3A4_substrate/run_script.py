@@ -11,6 +11,7 @@ from data_utils import CustomDataset
 import torch.nn.functional as F
 from datetime import datetime
 import matplotlib.pyplot as plt
+import seaborn as sns
 import numpy as np
 from transformers import AutoModel, AutoTokenizer
 from argparse import ArgumentParser, SUPPRESS
@@ -31,6 +32,8 @@ def calc_auc(grnd_truth, predictions):
         auc_score = roc_auc_score(grnd_truth[:, i], predictions[:, i])
         auc_scores.append(auc_score)
     
+    auc_scores_df = pd.DataFrame(auc_scores, columns=["AUC Score"])
+    auc_scores_df.to_csv("auc_scores.csv", index=False)
     # Average AUC scores
     auc_macro = np.mean(auc_scores)
 
@@ -72,11 +75,11 @@ LLModel = AutoModel.from_pretrained("ibm/MoLFormer-XL-both-10pct", deterministic
 tokenizer = AutoTokenizer.from_pretrained("ibm/MoLFormer-XL-both-10pct", trust_remote_code=True)
 
 LLModel.to("cuda")
-for name, layer in LLModel.named_children():
-    print(name, layer)
+# for name, layer in LLModel.named_children():
+#     print(name, layer)
 
 
-nnmodel = NNModel(config={"input_size": 768, "embedding_size": 512, "hidden_size": 256, "output_size": 2, "n_layers": 5}).to("cuda")
+nnmodel = NNModel(config={"input_size": 768, "embedding_size": 256, "hidden_size": 128, "output_size": 7, "n_layers": 3}).to("cuda")
 
 wandb.watch(nnmodel, log_freq=100)
 
@@ -120,7 +123,7 @@ train_dataloader = torch.utils.data.DataLoader(training_set, batch_size=16, shuf
 test_dataloader = torch.utils.data.DataLoader(test_set, batch_size=16, shuffle=False)
 
 # Initialize optimizer
-optimizer = torch.optim.Adam(nnmodel.parameters(), lr=1e-5)
+optimizer = torch.optim.Adam(nnmodel.parameters(), lr=1e-4)
 
 # Timestamp
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -130,9 +133,11 @@ timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 def train_one_epoch(epoch_index, criterion):
     LLModel.eval()
     running_loss = 0.0
-    total_loss = 0
+    # total_loss = 0
     num_of_examples: int = 0
-    for batch in tqdm(train_dataloader):
+    # molform_embs_train = []
+    # molform_labels_train = []
+    for batch in train_dataloader:
         input_ids = batch["input_ids"]
         attention_mask = batch["attention_mask"]
         labels = batch["labels"]
@@ -152,21 +157,32 @@ def train_one_epoch(epoch_index, criterion):
         # average over second dimension of encoder output to get a single vector for each example
         encoder = encoder.mean(dim=1)
 
+        # molform_embs_train.append(encoder.cpu().numpy())
+        # molform_labels_train.append(y_regression_values.cpu().numpy())
+
         # pass encoder output to regression head
         nn_outputs = nnmodel(encoder)
+        # print(nn_outputs)
         # calculate loss from outputs and ground_truth_y_values
         #nn_loss = F.mse_loss(nn_outputs.flatten(), y_regression_values)
         nn_loss = criterion(nn_outputs, y_regression_values)
-        total_loss += nn_loss.item()
+        # total_loss += nn_loss.item()
         nn_loss.backward()
         optimizer.step()
         running_loss += nn_loss.item()
         if num_of_examples % 10 == 0:
             last_loss = running_loss / 10 # loss per X examples
-            print('num_of_examples {} loss: {} %_data_trained : {}'.format(num_of_examples + 1, last_loss, num_of_examples / len(X_train) * 10))
-            wandb.log({"num_of_examples": num_of_examples, "train_loss": last_loss})
+            # print('num_of_examples {} loss: {} %_data_trained : {}'.format(num_of_examples + 1, last_loss, num_of_examples / len(X_train) * 10))
+            # wandb.log({"num_of_examples": num_of_examples, "train_loss": last_loss})
+            wandb.log({"loss_lv": nn_loss})
             running_loss = 0.
         num_of_examples += len(batch["input_ids"])
+    
+    # molform_embs_train = np.concatenate(molform_embs_train, axis=0)
+    # molform_labels_train = np.concatenate(molform_labels_train, axis=0)
+    # np.save('molform_embs_train.npy', molform_embs_train)
+    # np.save('molform_labels_train.npy', molform_labels_train)
+
     return running_loss
 
 def inference_test_set(epoch_index, criterion):
@@ -176,6 +192,8 @@ def inference_test_set(epoch_index, criterion):
     num_of_examples: int = 0
     # dictionary of all ground_truth and predictions
     outputs_dict = {"ground_truth": [], "predictions": []}
+    # molform_embs_test = []
+    # molform_labels_test = []
     for batch in test_dataloader:
         input_ids = batch["input_ids"]
         attention_mask = batch["attention_mask"]
@@ -193,6 +211,9 @@ def inference_test_set(epoch_index, criterion):
             # average over second dimension of encoder output to get a single vector for each example
             encoder = encoder.mean(dim=1)
 
+            # molform_embs_test.append(encoder.cpu().numpy())
+            # molform_labels_test.append(y_regression_values.cpu().numpy())
+
             # pass encoder output to regression head
             nn_outputs = nnmodel(encoder)
             #nn_loss = F.mse_loss(nn_outputs.flatten(), y_regression_values)
@@ -207,28 +228,35 @@ def inference_test_set(epoch_index, criterion):
             running_tloss += nn_loss.item()
             if num_of_examples % 10 == 0:
                 last_tloss = running_tloss / 100 # loss per X examples
-                print('  num_of_examples {} test_loss: {}'.format(num_of_examples + 1, last_tloss))
-                wandb.log({"num_of_test_examples": num_of_examples, "test_loss": last_tloss})
+                # print('  num_of_examples {} test_loss: {}'.format(num_of_examples + 1, last_tloss))
+                # wandb.log({"num_of_test_examples": num_of_examples, "test_loss": last_tloss})
+                wandb.log({"test_loss_lv": nn_loss})
                 running_tloss = 0.
                 # Track best performance, and save the model's state
                 num_of_examples += len(batch["input_ids"])
+    
+    # molform_embs_test = np.concatenate(molform_embs_test, axis=0)
+    # molform_labels_test = np.concatenate(molform_labels_test, axis=0)
+    # np.save('molform_embs_test.npy', molform_embs_test)
+    # np.save('molform_labels_test.npy', molform_labels_test)
+
     return outputs_dict
 
-def generate_parity_plot(ground_truth, predictions):
-    plt.scatter(ground_truth, predictions, s=0.2)
-    # draw line of best fit
-    m, b = np.polyfit(ground_truth, predictions, 1)
-    plt.plot(ground_truth, [m* g + b for g in ground_truth])#m*ground_truth + b)
-    # add labels of correlation coefficient
-    # correlation coefficient
-    r = np.corrcoef(ground_truth, predictions)[0, 1]
-    # pearson's r squared
-    r2 = sklearn.metrics.r2_score(ground_truth, predictions)
-    plt.legend(["Data", "y = {:.2f}x + {:.2f}; r={}; r2={}".format(m, b, r, r2)], loc="upper left")
-    plt.xlabel("Ground Truth")
-    plt.ylabel("Predictions")
-    plt.title("Ground Truth vs Predictions")
-    plt.savefig("parity_plot.png")
+# def generate_parity_plot(ground_truth, predictions):
+#     plt.scatter(ground_truth, predictions, s=0.2)
+#     # draw line of best fit
+#     m, b = np.polyfit(ground_truth, predictions, 1)
+#     plt.plot(ground_truth, [m* g + b for g in ground_truth])#m*ground_truth + b)
+#     # add labels of correlation coefficient
+#     # correlation coefficient
+#     r = np.corrcoef(ground_truth, predictions)[0, 1]
+#     # pearson's r squared
+#     r2 = sklearn.metrics.r2_score(ground_truth, predictions)
+#     plt.legend(["Data", "y = {:.2f}x + {:.2f}; r={}; r2={}".format(m, b, r, r2)], loc="upper left")
+#     plt.xlabel("Ground Truth")
+#     plt.ylabel("Predictions")
+#     plt.title("Ground Truth vs Predictions")
+#     plt.savefig("parity_plot.png")
 
 
 # Training loop
@@ -269,6 +297,9 @@ for epoch in (range(args.epochs)):
         y_true_test = np.argmax(outputs_dict["ground_truth"], axis=1)
         y_pred_test = np.argmax(outputs_dict["predictions"], axis=1)
         cm = confusion_matrix(y_true_test, y_pred_test)
+        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+        plt.show()
+        wandb.log({"confusion_matrix": wandb.Image(plt)})
         print("Confusion Matrix:\n", cm)
     else:
        stop_crit+=1

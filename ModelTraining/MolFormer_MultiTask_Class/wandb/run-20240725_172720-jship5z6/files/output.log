@@ -1,0 +1,88 @@
+filenames:
+woman
+man
+task_id: 2, batch num: 0
+task_id: 2, batch num: 1
+task_id: 2, batch num: 2
+task_id: 2, batch num: 3
+task_id: 2, batch num: 4
+task_id: 2, batch num: 5
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_humval.py:194: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  performance_df = performance_df.fillna(0.0)
+  0%|                                                                                                                                                                                                                              | 0/10 [00:00<?, ?it/s]
+task_id: 2, batch num: 6
+task_id: 2, batch num: 7
+task_id: 2, batch num: 8
+task_id: 2, batch num: 9
+task_id: 2, batch num: 10
+task_id: 2, batch num: 11
+task_id: 2, batch num: 12
+task_id: 2, batch num: 13
+task_id: 2, batch num: 14
+task_id: 2, batch num: 15
+task_id: 2, batch num: 16
+task_id: 2, batch num: 17
+task_id: 2, batch num: 18
+task_id: 2, batch num: 19
+task_id: 2, batch num: 20
+task_id: 2, batch num: 21
+task_id: 2, batch num: 22
+task_id: 2, batch num: 23
+task_id: 2, batch num: 24
+task_id: 2, batch num: 25
+task_id: 2, batch num: 26
+task_id: 2, batch num: 27
+task_id: 2, batch num: 28
+task_id: 2, batch num: 29
+task_id: 2, batch num: 30
+task_id: 2, batch num: 31
+task_id: 2, batch num: 32
+task_id: 2, batch num: 33
+task_id: 2, batch num: 34
+task_id: 2, batch num: 35
+task_id: 2, batch num: 36
+task_id: 2, batch num: 37
+  0%|                                                                                                                                                                                                                              | 0/10 [00:37<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_humval.py", line 214, in <module>
+    for i, batch in enumerate(zipped_train_dataloaders):
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/data_utils.py", line 22, in __getitem__
+    inputs = self.tokenizer(data, max_length=self.max_input_length, padding="max_length", truncation=True, return_tensors="pt")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2945, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3053, in _call_one
+    return self.encode_plus(
+           ^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3127, in encode_plus
+    return self._encode_plus(
+           ^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 601, in _encode_plus
+    batched_output = self._batch_encode_plus(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 576, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 227, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 762, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/lus/eagle/projects/datascience/avasan/envs/sst_tf216/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 724, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+task_id: 2, batch num: 39

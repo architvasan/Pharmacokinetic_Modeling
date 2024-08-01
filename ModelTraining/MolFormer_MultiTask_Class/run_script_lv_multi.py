@@ -48,7 +48,7 @@ def calc_auc(grnd_truth, predictions):
 # parse arguments: read in yaml file with all hyperparameters
 parser = ArgumentParser()#add_help=False)
 parser.add_argument(
-    "-y", "--yaml", type=Path, required=False, default="config.yaml", help="path to config .yaml file"
+    "-y", "--yaml", type=Path, required=False, default="multi.yaml", help="path to config .yaml file"
 )
 # args = parser.parse_args()
 args, unknown_args = parser.parse_known_args()
@@ -171,9 +171,9 @@ timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 performance_df = pd.DataFrame(index=tasknames + ["total"], 
                               columns=["task",
                                        "best_avg_ep", "best_avg_ep_tloss", "best_avg_ep_vloss", "best_avg_ep_AUC",
-                                       "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC", ]).fillna(0.0).infer_objects(copy=False)
+                                       "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC", ])
 performance_df = performance_df.fillna(0.0)
-performance_df = performance_df.infer_objects()
+performance_df = performance_df.infer_objects() 
 performance_df["best_avg_ep"] = performance_df["best_avg_ep"].astype(int)
 performance_df["best_own_ep"] = performance_df["best_own_ep"].astype(int)
 performance_df["task"] = tasknames + ["total"]
@@ -272,7 +272,7 @@ for epoch in tqdm(range(config.epochs)):
             # print(f"AUC: {auc}")
 
         
-        val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
+        # val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
         val_total_loss = sum(val_avg_losses)
         wandb.log({'val total loss': val_total_loss})
         # log val loss of every task
@@ -338,13 +338,27 @@ for epoch in tqdm(range(config.epochs)):
             #    # Generate Parity Plot
             #    generate_parity_plot(outputs_dict["ground_truth"], outputs_dict["predictions"])
 
-            # confusion matrix? average...? aggregate?
-            # y_true_test_rat = np.argmax(val_labels_rat, axis=1)
-            # y_pred_test_rat = np.argmax(val_preds_rat, axis=1)
-            # cm_rat = confusion_matrix(y_true_test, y_pred_test)
-            # plt.figure(figsize=(10, 7))
-            # sns.heatmap(cm_rat, annot=True, fmt='d', cmap='Blues')
-            # wandb.log({"RAT Confusion Matrix": wandb.Image(plt)})
+            # confusion matrix
+            confusion_matrices = [0] * num_tasks
+
+            for task_id, taskname in enumerate(tasknames):
+                # y_true_test = np.argmax(val_labels, axis=1)
+                # y_pred_test = np.argmax(val_preds, axis=1)
+                # cm = confusion_matrix(y_true_test, y_pred_test)
+
+                y_true = np.argmax(val_labels[task_id], axis=1)
+                y_pred = np.argmax(val_preds[task_id], axis=1)
+                
+                cm = confusion_matrix(y_true, y_pred)
+                confusion_matrices[task_id] = cm
+                
+                plt.figure(figsize=(10, 7))
+                sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+                plt.xlabel('Predicted')
+                plt.ylabel('Actual')
+                plt.title(f'{taskname} Confusion Matrix')
+                wandb.log({f"{taskname} Confusion Matrix": wandb.Image(plt)})
+                plt.close()
 
         else:
             stop_crit+=1
@@ -357,18 +371,19 @@ wandb.log({ "total_best_ep": performance_df.loc["total", "best_avg_ep"],
             "total_best_ep_AUC": performance_df.loc["total", "best_avg_ep_AUC"],
 })
 
-# log bar charts of performance for tasks and total model
-performance_table = wandb.Table(dataframe=performance_df)
-task_performance_table = wandb.Table(dataframe=performance_df.drop("total"))
+# if num_tasks > 1:
+#     # log bar charts of performance for tasks and total model
+#     performance_table = wandb.Table(dataframe=performance_df)
+#     task_performance_table = wandb.Table(dataframe=performance_df.drop("total"))
 
-# wandb.log({"best_avg_ep" : wandb.plot.bar(performance_table, "task", "best_avg_ep", title="best_avg_ep")}) # unnecessary, already in total_best_ep above, same for all tasks
-wandb.log({"best_avg_ep_tloss" : wandb.plot.bar(task_performance_table, "task", "best_avg_ep_tloss", title="best_avg_ep_tloss")})
-wandb.log({"best_avg_ep_vloss" : wandb.plot.bar(task_performance_table, "task", "best_avg_ep_vloss", title="best_avg_ep_vloss")})
-wandb.log({"best_avg_ep_AUC" : wandb.plot.bar(performance_table, "task", "best_avg_ep_AUC", title="best_avg_ep_AUC")})
-wandb.log({"best_own_ep" : wandb.plot.bar(task_performance_table, "task", "best_own_ep", title="best_own_ep")})
-wandb.log({"best_own_ep_tloss" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_tloss", title="best_own_ep_tloss")})
-wandb.log({"best_own_ep_vloss" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_vloss", title="best_own_ep_vloss")})
-wandb.log({"best_own_ep_AUC" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_AUC", title="best_own_ep_AUC")})
+#     # wandb.log({"best_avg_ep" : wandb.plot.bar(performance_table, "task", "best_avg_ep", title="best_avg_ep")}) # unnecessary, already in total_best_ep above, same for all tasks
+#     wandb.log({"best_avg_ep_tloss" : wandb.plot.bar(task_performance_table, "task", "best_avg_ep_tloss", title="best_avg_ep_tloss")})
+#     wandb.log({"best_avg_ep_vloss" : wandb.plot.bar(task_performance_table, "task", "best_avg_ep_vloss", title="best_avg_ep_vloss")})
+#     wandb.log({"best_avg_ep_AUC" : wandb.plot.bar(performance_table, "task", "best_avg_ep_AUC", title="best_avg_ep_AUC")})
+#     wandb.log({"best_own_ep" : wandb.plot.bar(task_performance_table, "task", "best_own_ep", title="best_own_ep")})
+#     wandb.log({"best_own_ep_tloss" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_tloss", title="best_own_ep_tloss")})
+#     wandb.log({"best_own_ep_vloss" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_vloss", title="best_own_ep_vloss")})
+#     wandb.log({"best_own_ep_AUC" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_AUC", title="best_own_ep_AUC")})
 
-# columns: "best_avg_ep", "best_avg_ep_tloss", "best_avg_ep_vloss", "best_avg_ep_AUC", "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC"
-performance_df.to_csv("performance.csv", index=False)
+#     # columns: "best_avg_ep", "best_avg_ep_tloss", "best_avg_ep_vloss", "best_avg_ep_AUC", "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC"
+#     performance_df.to_csv(f"performance{config.seed_idx}.csv", index=False)

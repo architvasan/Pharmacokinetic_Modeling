@@ -14,6 +14,7 @@ from classification_layer_multi import NNModel
 from data_utils import CustomDataset, RoundRobinBatchSampler
 import sys
 import pdb
+import yaml
 import wandb
 from tqdm import tqdm
 from pathlib import Path
@@ -44,50 +45,22 @@ def calc_auc(grnd_truth, predictions):
     return auc_macro
     
 
-# parse arguments
+# parse arguments: read in yaml file with all hyperparameters
 parser = ArgumentParser()#add_help=False)
 parser.add_argument(
-    "-d", "--exdataset", type=Path, required=True, help="Input data for training/validation to EXCLUDE"
+    "-y", "--yaml", type=Path, required=False, default="exconfig.yaml", help="path to config .yaml file"
 )
-parser.add_argument(
-    "-s", "--smilescol", type=str, required=True, help="Column for SMILES"
-)
-parser.add_argument(
-    "-l", "--labelcol", type=str, required=True, help="Column for labels"
-)
-parser.add_argument(
-    "-t", "--testprop", type=float, required=True, help="Proportion of data used for training"
-)
-parser.add_argument(
-    "-E", "--epochs", type=int, required=True, help="Number of epochs"
-)
-parser.add_argument(
-    "-i", "--seed_idx", type=int, required=True, help="Seed index"
-)
-
 # args = parser.parse_args()
 args, unknown_args = parser.parse_known_args()
+with open(args.yaml, 'r') as file:
+    config_dict = yaml.safe_load(file)
 
-# hyperparameters
-config = dict(  input_size = 768,
-                emb_size = 256,
-                hidden_size = 256,
-                output_size = 5,
-                lr = 1e-4,
-                test_size = args.testprop,
-                epochs = args.epochs,
-                layertype = "OrthoLinear",
-                seed_idx = args.seed_idx,
-                extask = exdataset.stem # tasks = args.dataset #
-)
-PROJECT = 'Multitask Class Oral Test'
-# PROJECT = 'Multitask_Class_Oral'
 
 # init wandb to log results
-wandb.init( project = PROJECT,
-            group = "extask",
-            # notes = "retrying crashed runs",
-            config = config,
+wandb.init( project = config_dict["init_project"],
+            group = config_dict["init_group"],
+            notes = config_dict["init_notes"],
+            config = config_dict,
 )
 config = wandb.config
 
@@ -131,37 +104,33 @@ wandb.watch(nnmodel, log_freq=100)
 # took out human data bc it gives errors
 
 len_smallest_dataset = 121
-len_smallest_testset = math.ceil(len_smallest_dataset*args.testprop)
+len_smallest_testset = math.ceil(len_smallest_dataset*config.testprop)
 len_smallest_trainset = len_smallest_dataset - len_smallest_testset
 # name_list = ['bird', 'cat', 'chicken', 'dog', 'duck', 'gpig', 'human', 'mammal', 'man', 'mouse', 'quail', 'rabbit', 'rat', 'woman']
-directory = Path('oral_data')
-num_tasks = len(list(directory.iterdir()))
+directory = Path(config.dataset)
+num_tasks = len(list(directory.iterdir())) - 1
 tasks = [None] * num_tasks
 
 print("filenames: ")
 for filepath in directory.iterdir():
-    # skip dataset to exclude
-    if filepath == ex_path:
-            continue
+    if filepath == Path(f"{config.dataset}/{config.extask}.csv"):
+        continue
     print(filepath.stem)
 
 for task_id, filepath in enumerate(directory.iterdir()):
-    # skip dataset to exclude
-    if filepath == ex_path:
-            continue
+    if filepath == Path(f"{config.dataset}/{config.extask}.csv"):
+        continue
 
     # import data
     data = pd.read_csv(filepath)
 
     # split data
-    # X_train, X_test = sklearn.model_selection.train_test_split(data[args.smilescol], test_size=args.testprop, stratify=data[args.labelcol], random_state=42)
-    # Y_train, Y_test = sklearn.model_selection.train_test_split(data[args.labelcol], test_size=args.testprop, stratify=data[args.labelcol], random_state=42)
     X_train, X_test, Y_train, Y_test = sklearn.model_selection.train_test_split(
-        data[args.smilescol],
-        data[args.labelcol],
-        test_size=args.testprop,
+        data[config.smilescol],
+        data[config.labelcol],
+        test_size=config.testprop,
         shuffle=True,
-        stratify=data[args.labelcol],
+        stratify=data[config.labelcol],
         random_state=SEED
     )
 
@@ -192,6 +161,7 @@ for task_id, filepath in enumerate(directory.iterdir()):
     taskname = filepath.stem
     tasks[task_id] = (taskname, train_dataloader, test_dataloader)
 
+tasknames = [task[0].upper() for task in tasks]
 
 # ========================================================================================================================
 
@@ -200,29 +170,33 @@ optimizer = torch.optim.Adam(nnmodel.parameters(), lr=config['lr'])
 # Timestamp
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
+
 # initialize helper variables
+# prepare performance dataframe
+performance_df = pd.DataFrame(index=tasknames + ["total"], 
+                              columns=["task",
+                                       "best_avg_ep", "best_avg_ep_tloss", "best_avg_ep_vloss", "best_avg_ep_AUC",
+                                       "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC", ])
+performance_df = performance_df.fillna(0.0)
+performance_df = performance_df.infer_objects()
+performance_df["best_avg_ep"] = performance_df["best_avg_ep"].astype(int)
+performance_df["best_own_ep"] = performance_df["best_own_ep"].astype(int)
+performance_df["task"] = tasknames + ["total"]
+
+
 early_stop = 20
 stop_crit = 0
-best_epoch_auc = 0
 loss_fn = nn.CrossEntropyLoss()
 
-# for i, batch in enumerate(zip(*(task[1] for task in tasks))):
-#     try:
-#         print(i)
-#         print(len(batch))
-#     except:
-#         print(f"batch num: {i}")
 
-
-for epoch in tqdm(range(args.epochs)):
+for epoch in tqdm(range(config.epochs)):
     wandb.log({'epoch': epoch})
     # training
-    # loop through batches (ith minibatch of every task)
-    wandb.log({'epoch': epoch})
     if True:
         train_running_losses = [0] * num_tasks
         # zip train_dataloaders of all tasks to iterate through them in parallel
         zipped_train_dataloaders = zip(*(task[1] for task in tasks))
+        # loop through batches (ith minibatch of every task)
         for i, batch in enumerate(zipped_train_dataloaders):
             train_batch_losses = [0] * num_tasks
             # loop through the tasks
@@ -259,20 +233,16 @@ for epoch in tqdm(range(args.epochs)):
             train_batch_total_loss.backward()
             optimizer.step()
 
-            # log loss of each 14 tasks?
             # wandb.log({'train batch total loss': train_batch_total_loss})
         
         num_train_batches = len(tasks[0][1])
         train_avg_losses = [loss / num_train_batches for loss in train_running_losses]
         train_epoch_total_loss = sum(train_avg_losses)
-        wandb.log({'train total loss': train_epoch_total_loss})
+        wandb.log({'train epoch total loss': train_epoch_total_loss})
         # log train loss of every task
-        print('testing tasknames and tlosses: ')
-        for task_id, task in enumerate(tasks):
-            taskname = task[0].upper()
-            print(taskname) # testing if taskname works
-            print(train_avg_losses[task_id])
-            # wandb.log({f'train {taskname} loss': train_avg_losses[task_id]})
+        if num_tasks > 1:
+            for task_id, taskname in enumerate(tasknames):
+                wandb.log({f'train {taskname} loss': train_avg_losses[task_id]})
 
     # validation
     if True:
@@ -304,20 +274,16 @@ for epoch in tqdm(range(args.epochs)):
             val_running_losses[task_id] = val_running_loss
             val_avg_losses[task_id] = val_running_loss / num_val_minibatches
             auc = calc_auc(val_labels[task_id], val_preds[task_id])
-            print(f"AUC: {auc}")
+            # print(f"AUC: {auc}")
 
         
-        val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
+        # val_avg_losses = [loss / num_val_minibatches for loss in val_running_losses]
         val_total_loss = sum(val_avg_losses)
-        
         wandb.log({'val total loss': val_total_loss})
         # log val loss of every task
-        print('testing tasknames and vlosses: ')
-        for task_id, task in enumerate(tasks):
-            taskname = task[0].upper()
-            print(taskname) # testing if taskname works
-            print(val_avg_losses[task_id])
-            # wandb.log({f'val {taskname} loss': val_avg_losses[task_id]})
+        if num_tasks > 1:
+            for task_id, taskname in enumerate(tasknames):
+                wandb.log({f'val {taskname} loss': val_avg_losses[task_id]})
 
         aucs = [0] * num_tasks
         for task_id in range(num_tasks):
@@ -330,24 +296,42 @@ for epoch in tqdm(range(args.epochs)):
         # log auc of all 14 tasks?
         wandb.log({'val avg auc': auc_avg})
         # log auc of every task
-        print('testing tasknames and aucs: ')
-        for task_id, task in enumerate(tasks):
-            taskname = task[0].upper()
-            print(taskname) # testing if taskname works
-            print(aucs[task_id])
-            # wandb.log({f'val {taskname} auc': aucs[task_id]})
+        if num_tasks > 1:
+            for task_id, taskname in enumerate(tasknames):
+                wandb.log({f'val {taskname} auc': aucs[task_id]})
+
+        # update performance_df if any aucs got better
+        for task_id, taskname in enumerate(tasknames):
+            if aucs[task_id] > performance_df.loc[taskname, "best_own_ep_AUC"]:
+                performance_df.loc[taskname, "best_own_ep"] = epoch
+                performance_df.loc[taskname, "best_own_ep_tloss"] = float(train_avg_losses[task_id])
+                performance_df.loc[taskname, "best_own_ep_vloss"] = float(val_avg_losses[task_id])
+                performance_df.loc[taskname, "best_own_ep_AUC"] = float(aucs[task_id])
+
 
         # take out specific tasks if their auc decreases early_stop times
 
         # save weights of specific last layers if their auc increases
 
         # early stopping and saving best results
-        if auc_avg>best_epoch_auc:
+        if auc_avg>performance_df.loc["total", "best_avg_ep_AUC"]:
             stop_crit = 0
-            best_epoch_auc = auc_avg
-            best_epoch = epoch
-            best_epoch_tloss = train_epoch_total_loss
-            best_epoch_vloss = val_total_loss
+            performance_df.loc["total", "best_avg_ep"] = epoch
+            performance_df.loc["total", "best_avg_ep_tloss"] = float(train_epoch_total_loss.item())
+            performance_df.loc["total", "best_avg_ep_vloss"] = float(val_total_loss.item())
+            performance_df.loc["total", "best_avg_ep_AUC"] = float(auc_avg.item())
+
+            for task_id, taskname in enumerate(tasknames):
+                performance_df.loc[taskname, "best_avg_ep"] = epoch
+                performance_df.loc[taskname, "best_avg_ep_tloss"] = float(train_avg_losses[task_id].item())
+                performance_df.loc[taskname, "best_avg_ep_vloss"] = float(val_avg_losses[task_id].item())
+                performance_df.loc[taskname, "best_avg_ep_AUC"] = float(aucs[task_id].item())
+
+            # performance_df["best_avg_ep"] = epoch
+            # performance_df["best_avg_ep_tloss"] = train_avg_losses.cpu().numpy() + [train_epoch_total_loss]
+            # performance_df["best_avg_ep_vloss"] = val_avg_losses.cpu().numpy() + [val_total_loss]
+            # performance_df["best_avg_ep_AUC"] = aucs + [auc_avg]
+
 
             torch.save(nnmodel.state_dict(), f'model_weights.pt')
 
@@ -372,9 +356,24 @@ for epoch in tqdm(range(args.epochs)):
         if stop_crit>early_stop:
             break
 
-wandb.log({ "best epoch": best_epoch,
-            "best epoch auc": best_epoch_auc,
-            "best epoch tloss": best_epoch_tloss,
-            "best epoch vloss": best_epoch_vloss
+wandb.log({ "total_best_ep": performance_df.loc["total", "best_avg_ep"],
+            "total_best_ep_tloss": performance_df.loc["total", "best_avg_ep_tloss"],
+            "total_best_ep_vloss": performance_df.loc["total", "best_avg_ep_vloss"],
+            "total_best_ep_AUC": performance_df.loc["total", "best_avg_ep_AUC"],
 })
 
+# log bar charts of performance for tasks and total model
+performance_table = wandb.Table(dataframe=performance_df)
+task_performance_table = wandb.Table(dataframe=performance_df.drop("total"))
+
+# wandb.log({"best_avg_ep" : wandb.plot.bar(performance_table, "task", "best_avg_ep", title="best_avg_ep")}) # unnecessary, already in total_best_ep above, same for all tasks
+wandb.log({"best_avg_ep_tloss" : wandb.plot.bar(task_performance_table, "task", "best_avg_ep_tloss", title="best_avg_ep_tloss")})
+wandb.log({"best_avg_ep_vloss" : wandb.plot.bar(task_performance_table, "task", "best_avg_ep_vloss", title="best_avg_ep_vloss")})
+wandb.log({"best_avg_ep_AUC" : wandb.plot.bar(performance_table, "task", "best_avg_ep_AUC", title="best_avg_ep_AUC")})
+wandb.log({"best_own_ep" : wandb.plot.bar(task_performance_table, "task", "best_own_ep", title="best_own_ep")})
+wandb.log({"best_own_ep_tloss" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_tloss", title="best_own_ep_tloss")})
+wandb.log({"best_own_ep_vloss" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_vloss", title="best_own_ep_vloss")})
+wandb.log({"best_own_ep_AUC" : wandb.plot.bar(task_performance_table, "task", "best_own_ep_AUC", title="best_own_ep_AUC")})
+
+# columns: "best_avg_ep", "best_avg_ep_tloss", "best_avg_ep_vloss", "best_avg_ep_AUC", "best_own_ep", "best_own_ep_tloss", "best_own_ep_vloss", "best_own_ep_AUC"
+performance_df.to_csv(f"performance_ex_{config.extask}{config.seed_idx}.csv", index=False)

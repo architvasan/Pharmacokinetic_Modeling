@@ -1,0 +1,36 @@
+wandb_version: 1
+
+batch_size:
+  value: 128
+dataset:
+  value: data/endo/NR_AhR.csv
+emb_size:
+  value: 128
+epochs:
+  value: 16
+hidden_size:
+  value: 512
+input_size:
+  value: 768
+labelcol:
+  value: Tox
+layer_sizes:
+  value:
+  - 128
+  - 64
+  - 32
+  - 16
+layertype:
+  value: OrthoLinear
+lr:
+  value: 0.0001
+output_size:
+  value: 1
+seed_idx:
+  value: 0
+smilescol:
+  value: SMILES
+task:
+  value: NR_AhR
+test_size:
+  value: 0.2

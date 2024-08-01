@@ -1,0 +1,11 @@
+filenames:
+woman
+man
+/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_humval_bi.py:197: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  performance_df = performance_df.fillna(0.0)
+  0%|                                                                                                                                                                               | 0/10 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "/lus/eagle/projects/datascience/lvairus/Pharmacokinetic_Modeling/ModelTraining/MolFormer_MultiTask_Class/run_script_lv_humval_bi.py", line 324, in <module>
+    if aucs[task_id] > performance_df.loc[taskname, "best_own_ep_AUC"]:
+       ~~~~^^^^^^^^^
+IndexError: list index out of range

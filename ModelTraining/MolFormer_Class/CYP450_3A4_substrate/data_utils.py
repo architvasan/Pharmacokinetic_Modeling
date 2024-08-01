@@ -25,5 +25,6 @@ class CustomDataset(Dataset):
             "input_ids": inputs["input_ids"].flatten().to(self.device),
             "attention_mask": inputs["attention_mask"].flatten().to(self.device),
             "labels": labels["input_ids"].flatten().to(self.device),
-            "y_regression_values": torch.tensor(self.y_regression_values[idx]).to(self.device),
+            # "y_regression_values": torch.tensor(self.y_regression_values[idx]).to(self.device),
+            "y_regression_values": self.y_regression_values[idx].clone().detach().to(self.device),
         }
